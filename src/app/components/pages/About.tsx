@@ -4,6 +4,7 @@ import { PrimaryButton } from "../Button";
 import { FadeIn } from "../FadeIn";
 import { useNavigate } from "react-router-dom";
 import profilbild from "../../../imports/Profilbild.jpg";
+import { Zap, Layers, UserCheck, type LucideIcon } from "lucide-react";
 
 export function About() {
   const navigate = useNavigate();
@@ -135,27 +136,33 @@ export function About() {
           </h2>
         </FadeIn>
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 items-stretch">
-          {[
+          {([
             {
+              Icon: Zap,
               t: "Einfach & klar",
               d: "Deine Kunden sollen sofort verstehen, was du anbietest – ohne suchen zu müssen.",
             },
             {
+              Icon: Layers,
               t: "Design & Technik aus einer Hand",
               d: "Ich mache beides selbst. So entsteht kein Wirrwarr zwischen verschiedenen Anbietern.",
             },
             {
+              Icon: UserCheck,
               t: "Persönliche Betreuung",
               d: "Du arbeitest direkt mit mir. Kein Callcenter, kein Ping-Pong – ein Ansprechpartner für alles.",
             },
-          ].map(({ t, d }) => (
+          ] as { Icon: LucideIcon; t: string; d: string }[]).map(({ Icon, t, d }) => (
             <FadeIn key={t} className="h-full">
               <Card className="h-full">
                 <div
-                  className="text-[12px] tracking-[0.25em] uppercase mb-3"
-                  style={{ color: "#4dbef3" }}
+                  className="mb-4 inline-flex items-center justify-center rounded-xl p-2.5"
+                  style={{
+                    background: "rgba(77, 190, 243, 0.10)",
+                    border: "1px solid rgba(77, 190, 243, 0.18)",
+                  }}
                 >
-                  Prinzip
+                  <Icon size={22} color="#4dbef3" strokeWidth={1.8} />
                 </div>
                 <h3 className="text-white text-[18px] sm:text-[20px] mb-2">
                   {t}
@@ -174,14 +181,7 @@ export function About() {
 
       {/* CTA */}
       <FadeIn>
-        <div
-          className="mt-20 rounded-2xl p-10 text-center"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(0,105,153,0.2) 0%, rgba(10,17,22,0.95) 100%)",
-            border: "1px solid rgba(77, 190, 243, 0.12)",
-          }}
-        >
+        <div className="mt-20 text-center">
           <h2 className="text-white text-[28px] mb-3">
             Lass uns miteinander reden.
           </h2>

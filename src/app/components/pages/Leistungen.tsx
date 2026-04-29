@@ -195,7 +195,7 @@ export function Leistungen() {
 
       {/* CTA */}
       <FadeIn>
-        <div className="mt-16 rounded-2xl border border-white/5 bg-gradient-to-br from-[#0f2440] to-[#0b1322] p-10 text-center">
+        <div className="mt-16 text-center">
           <h2 className="text-white text-[28px] mb-3">
             Bereit loszulegen?
           </h2>

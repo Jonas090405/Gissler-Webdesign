@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { Home, Briefcase, Layers, User, Mail, Menu, X } from "lucide-react";
+import { Briefcase, Layers, User, Mail, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useLocation, useNavigate } from "react-router-dom";
 import logoUrl from "../../imports/Logo_Gissler-webdesign.svg";
 
 const items = [
-  { id: "/", label: "Startseite", Icon: Home },
   { id: "/portfolio", label: "Portfolio", Icon: Briefcase },
   { id: "/leistungen", label: "Leistungen", Icon: Layers },
   { id: "/ueber-mich", label: "Über mich", Icon: User },
@@ -47,15 +46,11 @@ export function Navbar() {
         <div
           className="transition-all duration-300"
           style={{
-            background: scrolled
-              ? "rgba(13, 17, 21, 0.88)"
-              : "transparent",
+            background: scrolled ? "rgba(13, 17, 21, 0.80)" : "transparent",
             backdropFilter: scrolled ? "blur(14px)" : "none",
             WebkitBackdropFilter: scrolled ? "blur(14px)" : "none",
-            borderBottom: scrolled
-              ? "1px solid rgba(77, 190, 243, 0.10)"
-              : "1px solid transparent",
-            boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.45)" : "none",
+            borderBottom: scrolled ? "1px solid rgba(77, 190, 243, 0.08)" : "1px solid transparent",
+            boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.35)" : "none",
           }}
         >
           {/* Full-width relative layer so nav centers to viewport */}
@@ -66,6 +61,7 @@ export function Navbar() {
             {/* Logo – always pinned to viewport top-left */}
             <div className="absolute inset-y-0 left-6 lg:left-8 flex items-center">
               <button
+                type="button"
                 onClick={() => navigate("/")}
                 aria-label="Zur Startseite"
                 className="cursor-pointer hover:opacity-75 transition-opacity duration-200 shrink-0"
@@ -79,7 +75,7 @@ export function Navbar() {
             </div>
 
             {/* Nav items – centered to full viewport */}
-            <nav className="absolute inset-0 hidden lg:flex items-center justify-center gap-10">
+            <nav className="absolute inset-0 hidden lg:flex items-center justify-center gap-10 pointer-events-none">
               {items.map(({ id, label, Icon }) => {
                 const active =
                   location.pathname === id ||
@@ -88,14 +84,19 @@ export function Navbar() {
                   <button
                     key={id}
                     onClick={() => navigate(id)}
-                    className="group flex items-center gap-2.5 text-[16px] font-medium transition-colors duration-200 cursor-pointer relative py-1.5 whitespace-nowrap"
+                    className="nav-item group flex items-center gap-2.5 text-[16px] font-medium transition-colors duration-200 cursor-pointer relative py-1.5 whitespace-nowrap pointer-events-auto"
                     style={{ color: active ? "#ffffff" : "rgba(200,220,235,0.65)" }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget as HTMLButtonElement).style.color = "#ffffff"
-                    }
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLButtonElement).style.color = "#ffffff";
+                      const bar = e.currentTarget.querySelector(".underline-bar") as HTMLElement | null;
+                      if (bar) bar.style.width = "100%";
+                    }}
                     onMouseLeave={(e) => {
-                      if (!active)
+                      if (!active) {
                         (e.currentTarget as HTMLButtonElement).style.color = "rgba(200,220,235,0.65)";
+                        const bar = e.currentTarget.querySelector(".underline-bar") as HTMLElement | null;
+                        if (bar) bar.style.width = "0%";
+                      }
                     }}
                   >
                     <Icon
@@ -105,12 +106,10 @@ export function Navbar() {
                     <span className="relative">
                       {label}
                       <span
-                        className="absolute -bottom-0.5 left-0 h-[1.5px] rounded-full transition-all duration-200"
+                        className="absolute -bottom-0.5 left-0 h-[1.5px] rounded-full transition-all duration-200 underline-bar"
                         style={{
-                          width: "100%",
-                          background: active
-                            ? "#4dbef3"
-                            : "rgba(200,220,235,0.18)",
+                          width: active ? "100%" : "0%",
+                          background: "#4dbef3",
                         }}
                       />
                     </span>
@@ -127,14 +126,15 @@ export function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 lg:hidden flex items-center justify-between px-4 transition-all duration-300"
         style={{
           height: "60px",
-          background: scrolled ? "rgba(13, 17, 21, 0.88)" : "transparent",
+          background: scrolled ? "rgba(13, 17, 21, 0.80)" : "transparent",
           backdropFilter: scrolled ? "blur(14px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(14px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(77, 190, 243, 0.10)" : "1px solid transparent",
-          boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.45)" : "none",
+          borderBottom: scrolled ? "1px solid rgba(77, 190, 243, 0.08)" : "1px solid transparent",
+          boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.35)" : "none",
         }}
       >
         <button
+          type="button"
           onClick={() => navigate("/")}
           aria-label="Zur Startseite"
           className="cursor-pointer hover:opacity-75 transition-opacity duration-200"
@@ -176,6 +176,7 @@ export function Navbar() {
             >
               <div className="flex items-center justify-between px-6 pt-6 pb-4">
                 <button
+                  type="button"
                   onClick={() => { navigate("/"); setIsOpen(false); }}
                   aria-label="Zur Startseite"
                   className="cursor-pointer hover:opacity-70 transition-opacity duration-200"
