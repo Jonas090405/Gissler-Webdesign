@@ -1,0 +1,404 @@
+import { useState } from "react";
+import { SectionLabel } from "../SectionLabel";
+import { PrimaryButton, GhostButton } from "../Button";
+import { Card } from "../Card";
+import { FadeIn } from "../FadeIn";
+import { PortfolioSlider } from "../PortfolioSlider";
+import { useNavigate } from "react-router-dom";
+import { Palette, Code2, Rocket, ExternalLink } from "lucide-react";
+import profilbild from "../../../imports/Profilbild.jpg";
+import designerImg from "../../../imports/undraw_designer_efwz.svg";
+import gcnImg from "../../../imports/gcn-fahrzeughandel.png";
+
+const PROJECTS = [
+  {
+    image: gcnImg,
+    tag: "Fahrzeughandel · 2026",
+    title: "GCN-Fahrzeughandel",
+    desc: "Vollständige Web-Plattform für einen Fahrzeughändler – Außendarstellung, Fahrzeugsuche, Verkaufsauftragsformulare mit automatischer E-Mail-Benachrichtigung und internes Kundenverwaltungs-Dashboard.",
+    url: "https://gcn-fahrzeughandel.de/",
+    features: ["React", "Dashboard", "Fahrzeugsuche", "E-Mail-System", "Deployment"],
+  },
+  {
+    image: null,
+    tag: "Demnächst verfügbar",
+    title: "Nächstes Projekt",
+    desc: "Mein nächstes Projekt ist gerade in Umsetzung. Melde dich gerne, wenn du Interesse an einer Zusammenarbeit hast.",
+    comingSoon: true,
+  },
+];
+
+export function Home() {
+  return (
+    <main className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 xl:px-16">
+      <Hero />
+      <PortfolioPreview />
+      <Services />
+      <AboutPreview />
+      <Contact />
+    </main>
+  );
+}
+
+function Hero() {
+  const navigate = useNavigate();
+  return (
+    <section className="pt-36 sm:pt-44 lg:pt-52 xl:pt-60 pb-20 sm:pb-32 lg:pb-40 xl:pb-48 relative">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 xl:gap-16 items-center">
+        <div>
+          <FadeIn>
+            <SectionLabel>Webdesign · Entwicklung · Deployment</SectionLabel>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <h1 className="text-white text-[clamp(38px,7vw,108px)] leading-[1.05] tracking-tight max-w-5xl lg:max-w-none">
+              Webseiten,{" "}
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, #4dbef3 0%, #006999 100%)",
+                }}
+              >
+                die Wirkung zeigen.
+              </span>
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p
+              className="mt-6 sm:mt-8 max-w-2xl lg:max-w-xl xl:max-w-2xl text-[17px] sm:text-[19px] lg:text-[21px] xl:text-[23px] leading-relaxed"
+              style={{ color: "rgba(200, 225, 240, 0.75)" }}
+            >
+              Ich entwerfe und baue deine Website – von der ersten Idee bis sie live im Internet ist.
+              Du musst dich um nichts kümmern.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <div className="mt-8 sm:mt-10 xl:mt-12 flex flex-wrap gap-3">
+              <PrimaryButton onClick={() => navigate("/kontakt")}>
+                Projekt anfragen
+              </PrimaryButton>
+            </div>
+          </FadeIn>
+        </div>
+
+        <FadeIn delay={0.4} className="hidden lg:flex justify-center lg:justify-end">
+          <img
+            src={designerImg}
+            alt="Webdesign Illustration"
+            className="w-full max-w-[500px] xl:max-w-[700px] 2xl:max-w-[800px] h-auto drop-shadow-[0_0_60px_rgba(77,190,243,0.15)]"
+          />
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+function PortfolioPreview() {
+  const navigate = useNavigate();
+  return (
+    <section className="py-16 sm:py-20 lg:py-28 xl:py-36">
+      <FadeIn>
+        <SectionLabel>Portfolio</SectionLabel>
+        <div className="mb-8 sm:mb-10 xl:mb-14">
+          <h2 className="text-white text-[clamp(28px,4.5vw,64px)] tracking-tight max-w-xl xl:max-w-2xl">
+            Projekte, die ich umgesetzt habe
+          </h2>
+          <p className="mt-4 xl:mt-6 max-w-2xl text-[15px] sm:text-[17px] xl:text-[19px] leading-relaxed" style={{ color: "rgba(180,210,230,0.65)" }}>
+            Echte Projekte, reale Kunden – von der Konzeption bis zur fertigen, live geschalteten Website.
+          </p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={0.1}>
+        <PortfolioSlider projects={PROJECTS} />
+      </FadeIn>
+
+      <FadeIn delay={0.2}>
+        <div className="mt-10 flex flex-wrap gap-3">
+          <PrimaryButton onClick={() => navigate("/portfolio")}>
+            Alle Projekte ansehen
+          </PrimaryButton>
+          <a
+            href="https://gissler-webdesign/portfolio.de"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full px-6 py-3 transition-all duration-200"
+            style={{
+              background: "rgba(77, 190, 243, 0.07)",
+              border: "1px solid rgba(77, 190, 243, 0.2)",
+              color: "rgba(200, 235, 255, 0.85)",
+            }}
+          >
+            Mein Portfolio <ExternalLink size={16} />
+          </a>
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
+function Services() {
+  const navigate = useNavigate();
+  const services = [
+    {
+      Icon: Palette,
+      title: "Individuelles Design",
+      desc: "Deine Website sieht genau so aus, wie du es dir vorstellst – kein vorgefertigtes Template, sondern ein eigenes Design für dich.",
+    },
+    {
+      Icon: Code2,
+      title: "Technische Umsetzung",
+      desc: "Ich baue alles sauber und modern – schnelle Ladezeiten, gut bei Google auffindbar, auf Handy und PC perfekt nutzbar.",
+    },
+    {
+      Icon: Rocket,
+      title: "Fertig live, sofort nutzbar",
+      desc: "Domain, Hosting, Einrichtung – ich kümmere mich um alles. Du bekommst eine fertige Website und kannst sofort loslegen.",
+    },
+  ];
+
+  return (
+    <section id="leistungen" className="py-16 sm:py-20 lg:py-28 xl:py-36">
+      <FadeIn>
+        <SectionLabel>Leistungen</SectionLabel>
+        <div className="mb-10 sm:mb-12 xl:mb-16">
+          <h2 className="text-white text-[clamp(28px,4.5vw,64px)] tracking-tight max-w-xl xl:max-w-2xl">
+            Alles, was du für deine Website brauchst.
+          </h2>
+          <p className="mt-4 xl:mt-6 max-w-2xl text-[15px] sm:text-[17px] xl:text-[19px] leading-relaxed" style={{ color: "rgba(180,210,230,0.65)" }}>
+            Ich übernehme alles – Design, Entwicklung und Hosting. Du musst dich um nichts kümmern.
+          </p>
+        </div>
+      </FadeIn>
+
+      <div className="grid gap-5 sm:gap-6 xl:gap-8 sm:grid-cols-2 md:grid-cols-3">
+        {services.map(({ Icon, title, desc }, i) => (
+          <FadeIn key={title} delay={i * 0.08}>
+            <Card>
+              <div
+                className="mb-5 xl:mb-7 inline-flex h-12 w-12 xl:h-16 xl:w-16 items-center justify-center rounded-xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(0,105,153,0.25) 0%, rgba(77,190,243,0.12) 100%)",
+                  border: "1px solid rgba(77, 190, 243, 0.2)",
+                }}
+              >
+                <Icon size={22} className="xl:!h-7 xl:!w-7" style={{ color: "#4dbef3" }} />
+              </div>
+              <h3 className="text-white text-[18px] sm:text-[20px] xl:text-[22px] mb-2 xl:mb-3">
+                {title}
+              </h3>
+              <p
+                className="text-[14px] xl:text-[16px] leading-relaxed"
+                style={{ color: "rgba(180, 210, 230, 0.6)" }}
+              >
+                {desc}
+              </p>
+            </Card>
+          </FadeIn>
+        ))}
+      </div>
+
+      <FadeIn delay={0.2}>
+        <div className="mt-10 xl:mt-14">
+          <GhostButton onClick={() => navigate("/leistungen")}>
+            Mehr über meine Leistungen
+          </GhostButton>
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
+function AboutPreview() {
+  const navigate = useNavigate();
+  return (
+    <section className="py-16 sm:py-20 lg:py-28 xl:py-36">
+      <FadeIn>
+        <SectionLabel>Über mich</SectionLabel>
+      </FadeIn>
+      <div className="grid gap-10 md:gap-12 xl:gap-20 md:grid-cols-5 items-center">
+        <FadeIn className="md:col-span-3">
+          <h2 className="text-white text-[clamp(26px,4vw,54px)] tracking-tight mb-6 xl:mb-8">
+            Hi, ich bin Jonas.
+          </h2>
+          <p
+            className="text-[15px] sm:text-[16px] xl:text-[18px] leading-relaxed mb-4 xl:mb-6"
+            style={{ color: "rgba(200, 225, 240, 0.8)" }}
+          >
+            Webdesigner und Entwickler aus Triberg im Schwarzwald.
+            Ich kümmere mich komplett um deine Website – Design, Technik und alles, was dazugehört.
+          </p>
+          <p
+            className="text-[14px] sm:text-[15px] xl:text-[17px] leading-relaxed mb-4"
+            style={{ color: "rgba(180, 210, 230, 0.6)" }}
+          >
+            Mein Ziel ist eine Website, mit der deine Kunden sofort verstehen, was du anbietest –
+            und dich gerne kontaktieren.
+          </p>
+          <p
+            className="text-[14px] sm:text-[15px] xl:text-[17px] leading-relaxed mb-8 xl:mb-10"
+            style={{ color: "rgba(180, 210, 230, 0.6)" }}
+          >
+            Und ich bin persönlich für dich da – du schreibst immer direkt mit mir, nicht mit einem Callcenter.
+          </p>
+          <GhostButton onClick={() => navigate("/ueber-mich")}>
+            Mehr über mich
+          </GhostButton>
+        </FadeIn>
+
+        <FadeIn delay={0.15} className="md:col-span-2 flex justify-center">
+          <div className="relative">
+            <div
+              className="absolute inset-0 rounded-full scale-[1.08]"
+              style={{ border: "1px solid rgba(77, 190, 243, 0.15)" }}
+            />
+            <div
+              className="relative h-56 w-56 sm:h-64 sm:w-64 xl:h-80 xl:w-80 rounded-full overflow-hidden"
+              style={{ border: "2px solid rgba(77, 190, 243, 0.4)" }}
+            >
+              <img
+                src={profilbild}
+                alt="Jonas Gissler"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  const [sent, setSent] = useState(false);
+  return (
+    <section id="kontakt" className="py-16 sm:py-20 lg:py-28 xl:py-36">
+      <FadeIn>
+        <SectionLabel>Kontakt</SectionLabel>
+      </FadeIn>
+      <div className="grid gap-10 md:gap-12 xl:gap-20 md:grid-cols-2 items-start">
+        <FadeIn>
+          <h2 className="text-white text-[clamp(26px,4vw,54px)] tracking-tight mb-6 xl:mb-8">
+            Erzähl mir von deinem Projekt.
+          </h2>
+          <p
+            className="text-[14px] sm:text-[15px] xl:text-[17px] leading-relaxed mb-8 max-w-md xl:max-w-lg"
+            style={{ color: "rgba(180, 210, 230, 0.6)" }}
+          >
+            Schreib mir kurz, was du brauchst – ich melde mich innerhalb von 24 Stunden
+            mit einer ersten Einschätzung. Kostenlos, unverbindlich, unkompliziert.
+          </p>
+          <div className="space-y-3 text-[14px] xl:text-[16px]">
+            <div>
+              <div className="mb-1" style={{ color: "rgba(150, 180, 200, 0.5)" }}>E-Mail</div>
+              <div className="text-white break-all">jonas-gissler@gmx.de</div>
+            </div>
+            <div>
+              <div className="mb-1" style={{ color: "rgba(150, 180, 200, 0.5)" }}>Standort</div>
+              <div className="text-white">Triberg, Schwarzwald</div>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.15}>
+          <Card>
+            {sent ? (
+              <div className="py-12 text-center">
+                <div
+                  className="text-[12px] tracking-[0.25em] uppercase mb-3"
+                  style={{ color: "#4dbef3" }}
+                >
+                  Gesendet
+                </div>
+                <h3 className="text-white text-[22px] mb-2">Danke!</h3>
+                <p
+                  className="text-[14px]"
+                  style={{ color: "rgba(180, 210, 230, 0.6)" }}
+                >
+                  Ich melde mich so schnell wie möglich bei dir.
+                </p>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setSent(true);
+                }}
+                className="space-y-5"
+              >
+                <Field label="Name" name="name" />
+                <Field label="E-Mail" name="email" type="email" />
+                <Field label="Nachricht" name="message" textarea />
+                <PrimaryButton type="submit">Projekt anfragen</PrimaryButton>
+              </form>
+            )}
+          </Card>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+function Field({
+  label,
+  name,
+  type = "text",
+  textarea = false,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  textarea?: boolean;
+}) {
+  const cls =
+    "w-full rounded-xl px-4 py-3 text-white placeholder:text-slate-500 outline-none transition-all";
+  const style = {
+    background: "rgba(10, 17, 25, 0.8)",
+    border: "1px solid rgba(77, 190, 243, 0.12)",
+  };
+
+  return (
+    <label className="block">
+      <span
+        className="block text-[12px] tracking-[0.2em] uppercase mb-2"
+        style={{ color: "rgba(150, 190, 220, 0.6)" }}
+      >
+        {label}
+      </span>
+      {textarea ? (
+        <textarea
+          name={name}
+          rows={5}
+          className={cls}
+          style={style}
+          onFocus={(e) => {
+            e.currentTarget.style.borderColor = "rgba(77, 190, 243, 0.45)";
+            e.currentTarget.style.boxShadow = "0 0 0 3px rgba(77,190,243,0.1)";
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.borderColor = "rgba(77, 190, 243, 0.12)";
+            e.currentTarget.style.boxShadow = "none";
+          }}
+          required
+        />
+      ) : (
+        <input
+          name={name}
+          type={type}
+          className={cls}
+          style={style}
+          onFocus={(e) => {
+            e.currentTarget.style.borderColor = "rgba(77, 190, 243, 0.45)";
+            e.currentTarget.style.boxShadow = "0 0 0 3px rgba(77,190,243,0.1)";
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.borderColor = "rgba(77, 190, 243, 0.12)";
+            e.currentTarget.style.boxShadow = "none";
+          }}
+          required
+        />
+      )}
+    </label>
+  );
+}
