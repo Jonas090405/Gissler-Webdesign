@@ -125,6 +125,14 @@ function PortfolioPreview() {
               border: "1px solid rgba(77, 190, 243, 0.2)",
               color: "rgba(200, 235, 255, 0.85)",
             }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(77, 190, 243, 0.13)";
+              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(77, 190, 243, 0.35)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(77, 190, 243, 0.07)";
+              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(77, 190, 243, 0.2)";
+            }}
           >
             Mein Portfolio <ExternalLink size={16} />
           </a>
