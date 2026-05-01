@@ -41,7 +41,7 @@ export function PortfolioSlider({ projects }: { projects: Project[] }) {
   return (
     <div>
       {!single && (
-        <div className="mb-6 flex justify-end gap-2">
+        <div className="mb-6 flex justify-end gap-3 sm:gap-2">
           <SliderBtn onClick={() => go(-1)} aria="Vorheriges Projekt">
             <ChevronLeft size={18} />
           </SliderBtn>
@@ -159,7 +159,7 @@ function SliderBtn({
     <button
       onClick={onClick}
       aria-label={aria}
-      className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition-all hover:bg-white/10 hover:border-sky-400/40 hover:text-sky-300 active:scale-95"
+      className="inline-flex h-12 w-12 sm:h-10 sm:w-10 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition-all hover:bg-white/10 hover:border-sky-400/40 hover:text-sky-300 active:scale-95"
     >
       {children}
     </button>

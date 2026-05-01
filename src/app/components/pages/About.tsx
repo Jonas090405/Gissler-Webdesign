@@ -24,7 +24,7 @@ export function About() {
             className="mt-6 text-[16px] sm:text-[17px] leading-relaxed"
             style={{ color: "rgba(200, 225, 240, 0.8)" }}
           >
-            Ich bin 20 Jahre alt und komme aus Triberg im Schwarzwald.
+            Ich bin 21 Jahre alt und komme aus Triberg im Schwarzwald.
             Ich designe und entwickle Websites für lokale Unternehmen.
             Von der ersten Idee bis sie live sind.
           </p>

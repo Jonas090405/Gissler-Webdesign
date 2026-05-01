@@ -30,8 +30,8 @@ const timelineSteps = [
   {
     icon: RefreshCw,
     step: "4",
-    title: "Überarbeitung",
-    desc: "Dein Feedback setze ich Schritt für Schritt um. Ich passe an, verfeinere und verbessere – so lange, bis alles wirklich passt.",
+    title: "1. Überarbeitung",
+    desc: "Dein Feedback setze ich Schritt für Schritt um. Ich passe an, verfeinere und verbessere.",
     tag: "auf deinen Wunsch abgestimmt",
   },
   {
@@ -42,8 +42,15 @@ const timelineSteps = [
     tag: "alles unter Kontrolle",
   },
   {
-    icon: Globe,
+    icon: RefreshCw,
     step: "6",
+    title: "2. Überarbeitung",
+    desc: "Hier kümmere ich mich um den Feinschliff und die letzten Details. Deine finalen Wünsche aus dem letzten Check werden punktgenau umgesetzt.",
+    tag: "der letzte feinschliff",
+  },
+  {
+    icon: Globe,
+    step: "7",
     title: "Fertig – deine Website ist live",
     desc: "Deine Website geht online – fertig eingerichtet, auf deiner Domain, direkt nutzbar. Ich kümmere mich um Hosting, Domain und alles Technische. Du bekommst eine fertige Website und musst nichts selbst einrichten.",
     tag: "komplett fertig & gehostet",
@@ -142,7 +149,7 @@ export function Leistungen() {
 
         <div className="relative">
           {/* Vertical connecting line */}
-          <div className="absolute left-6 top-6 bottom-6 w-px bg-gradient-to-b from-sky-400/60 via-sky-400/20 to-transparent hidden sm:block" />
+          <div className="absolute left-6 top-6 bottom-6 w-px bg-sky-400/15" />
 
           <div className="space-y-0">
             {timelineSteps.map(({ icon: Icon, step, title, desc, tag }, i) => (
