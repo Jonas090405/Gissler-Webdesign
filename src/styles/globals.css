@@ -207,3 +207,17 @@ button *,
     background-position: center;
     background-repeat: no-repeat;
 }
+
+/* ============================================================
+   TEXT SELECTION
+   ============================================================ */
+
+::selection {
+    background: var(--accent-light);
+    color: var(--primary-color);
+}
+
+::-moz-selection {
+    background: var(--accent-light);
+    color: var(--primary-color);
+}
