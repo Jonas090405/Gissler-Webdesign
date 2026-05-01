@@ -65,19 +65,19 @@ export function PortfolioSlider({ projects }: { projects: Project[] }) {
             exit={{ opacity: 0, x: direction * -60 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Card className="p-0 overflow-hidden">
-              <div className="grid md:grid-cols-2 gap-0 md:h-[420px]">
+            <Card className="p-3 sm:p-4 md:p-5 rounded-[28px] sm:rounded-[32px] md:rounded-[36px] overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-6 md:gap-8 md:h-[420px]">
                 {/* Image or Coming Soon placeholder */}
                 <div className="h-[220px] md:h-full overflow-hidden">
                   {project.image ? (
                     <ImageWithFallback
                       src={project.image}
                       alt={project.title}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover rounded-2xl"
                     />
                   ) : (
                     <div
-                      className="h-full w-full flex flex-col items-center justify-center gap-4"
+                      className="h-full w-full flex flex-col items-center justify-center gap-4 rounded-2xl"
                       style={{
                         background: "linear-gradient(135deg, rgba(0,105,153,0.15) 0%, rgba(77,190,243,0.08) 100%)",
                         borderRight: "1px solid rgba(77,190,243,0.10)",
@@ -97,7 +97,7 @@ export function PortfolioSlider({ projects }: { projects: Project[] }) {
                 </div>
 
                 {/* Text-Seite – füllt die restliche Karte */}
-                <div className="p-6 sm:p-8 md:p-10 flex flex-col justify-center overflow-hidden">
+                <div className="px-2 pb-2 sm:px-4 sm:pb-4 md:p-4 flex flex-col justify-center overflow-hidden">
                   <div className="text-sky-400 text-[12px] tracking-[0.2em] uppercase mb-3">
                     {project.tag}
                   </div>

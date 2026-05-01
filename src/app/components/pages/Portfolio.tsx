@@ -9,7 +9,7 @@ const PROJECTS = [
     image: gcnImg,
     tag: "Fahrzeughandel · 2026",
     title: "GCN-Fahrzeughandel",
-    desc: "Vollständige Web-Plattform für einen Fahrzeughändler – Außendarstellung, Fahrzeugsuche, Verkaufsauftragsformulare mit automatischer E-Mail-Benachrichtigung und internes Kundenverwaltungs-Dashboard.",
+    desc: "Vollständige Web-Plattform für einen Fahrzeughändler. Außendarstellung, Fahrzeugsuche, Verkaufsauftragsformulare mit automatischer E-Mail-Benachrichtigung und internes Kundenverwaltungs-Dashboard.",
     url: "https://gcn-fahrzeughandel.de/",
   },
   {
@@ -31,7 +31,7 @@ export function Portfolio() {
         </h1>
         <p className="mt-5 sm:mt-6 max-w-2xl text-[15px] sm:text-[16px] text-slate-400 leading-relaxed">
           Eine Auswahl aktueller Kundenarbeiten. Weitere Projekte folgen
-          kontinuierlich.
+          in Kürze.
         </p>
       </FadeIn>
 
@@ -41,7 +41,7 @@ export function Portfolio() {
 
       <FadeIn delay={0.2}>
         <div className="mt-16 sm:mt-20 rounded-2xl border border-white/5 bg-gradient-to-br from-[#0f2440] to-[#0b1322] p-6 sm:p-10">
-          <SectionLabel>Mein Portfolio</SectionLabel>
+          <SectionLabel>Persönliches Portfolio</SectionLabel>
           <div className="grid gap-6 md:grid-cols-2 items-center">
             <div>
               <h2 className="text-white text-[22px] sm:text-[28px] mb-3">
@@ -50,7 +50,7 @@ export function Portfolio() {
               <p className="text-slate-400 text-[14px] leading-relaxed">
                 Über meine Studienzeit und Nebenprojekte sind zahlreiche
                 UX/UI-Arbeiten entstanden. Diese findest du gebündelt in
-                meinem Portfolio.
+                meinem persönlichen Portfolio.
               </p>
             </div>
             <div className="md:text-right">
@@ -60,7 +60,7 @@ export function Portfolio() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-400/10 px-6 py-3 text-sky-300 hover:bg-sky-400/20 transition-all"
               >
-                Mein Portfolio öffnen <ExternalLink size={16} />
+                Persönliches Portfolio öffnen <ExternalLink size={16} />
               </a>
             </div>
           </div>

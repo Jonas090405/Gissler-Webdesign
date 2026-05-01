@@ -177,22 +177,6 @@ export function Leistungen() {
         </div>
       </div>
 
-      {/* Personal support callout */}
-      <FadeIn>
-        <div className="mt-20 rounded-2xl border border-sky-400/20 bg-gradient-to-br from-sky-500/10 to-[#0b1322] p-8 sm:p-10 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-          <div className="shrink-0 h-12 w-12 rounded-full bg-sky-400/10 border border-sky-400/30 flex items-center justify-center">
-            <MessageCircle size={22} className="text-sky-400" />
-          </div>
-          <div>
-            <div className="text-sky-400 text-[11px] tracking-[0.2em] uppercase mb-1">Persönliche Betreuung</div>
-            <h3 className="text-white text-[20px] sm:text-[22px] mb-1">Du hast immer einen direkten Ansprechpartner.</h3>
-            <p className="text-slate-400 text-[14px] leading-relaxed max-w-xl">
-              Kein Callcenter, keine Weiterleitung. Du arbeitest direkt mit mir – Jonas – zusammen.
-              Fragen, Änderungswünsche, Feedback: einfach schreiben, ich kümmere mich darum.
-            </p>
-          </div>
-        </div>
-      </FadeIn>
 
       {/* CTA */}
       <FadeIn>

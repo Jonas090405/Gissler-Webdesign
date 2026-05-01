@@ -25,16 +25,16 @@ export function About() {
             style={{ color: "rgba(200, 225, 240, 0.8)" }}
           >
             Ich bin 20 Jahre alt und komme aus Triberg im Schwarzwald.
-            Ich designe und entwickle Websites für lokale Unternehmen –
-            von der ersten Idee bis sie live im Internet ist.
+            Ich designe und entwickle Websites für lokale Unternehmen.
+            Von der ersten Idee bis sie live sind.
           </p>
           <p
             className="mt-4 text-[15px] leading-relaxed"
             style={{ color: "rgba(180, 210, 230, 0.6)" }}
           >
-            Aktuell studiere ich Medienkonzeption an der Hochschule Furtwangen,
+            Aktuell studiere ich Medienkonzeption an der Hochschule Furtwangen
             mit Fokus auf Design und Nutzererfahrung. Diese Kombination aus
-            Gestaltung und Technik bringt ich direkt in jedes Projekt ein.
+            Gestaltung und Technik bringe ich direkt in jedes Projekt ein.
           </p>
         </FadeIn>
 
@@ -87,7 +87,7 @@ export function About() {
             >
               <li>Studium Medienkonzeption (HFU Furtwangen)</li>
               <li>Schwerpunkt UX/UI & Frontend-Entwicklung</li>
-              <li>Selbstständig seit 2025</li>
+              <li>Arbeitserfahrung als Designer</li>
               <li>Aus Triberg im Schwarzwald</li>
             </ul>
           </Card>
@@ -140,7 +140,7 @@ export function About() {
             {
               Icon: Zap,
               t: "Einfach & klar",
-              d: "Deine Kunden sollen sofort verstehen, was du anbietest – ohne suchen zu müssen.",
+              d: "Deine Kunden sollen sofort verstehen, was du anbietest. Ganz ohne suchen zu müssen.",
             },
             {
               Icon: Layers,
@@ -150,7 +150,7 @@ export function About() {
             {
               Icon: UserCheck,
               t: "Persönliche Betreuung",
-              d: "Du arbeitest direkt mit mir. Kein Callcenter, kein Ping-Pong – ein Ansprechpartner für alles.",
+              d: "Du arbeitest direkt mit mir. Kein Callcenter, kein Ping-Pong. Ein Ansprechpartner für alles.",
             },
           ] as { Icon: LucideIcon; t: string; d: string }[]).map(({ Icon, t, d }) => (
             <FadeIn key={t} className="h-full">

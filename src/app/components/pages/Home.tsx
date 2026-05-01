@@ -69,7 +69,7 @@ function Hero() {
               className="mt-6 sm:mt-8 max-w-2xl lg:max-w-xl xl:max-w-2xl text-[17px] sm:text-[19px] lg:text-[21px] xl:text-[23px] leading-relaxed"
               style={{ color: "rgba(200, 225, 240, 0.75)" }}
             >
-              Ich entwerfe und baue deine Website – von der ersten Idee bis sie live im Internet ist.
+              Ich entwerfe und baue deine Website. Von der ersten Idee bis sie live ist.
               Du musst dich um nichts kümmern.
             </p>
           </FadeIn>
@@ -95,13 +95,13 @@ function PortfolioPreview() {
   return (
     <section className="py-16 sm:py-20 lg:py-28 xl:py-36">
       <FadeIn>
-        <SectionLabel>Portfolio</SectionLabel>
+        <SectionLabel>Projekte</SectionLabel>
         <div className="mb-8 sm:mb-10 xl:mb-14">
           <h2 className="text-white text-[clamp(28px,4.5vw,64px)] tracking-tight max-w-xl xl:max-w-2xl">
             Projekte, die ich umgesetzt habe
           </h2>
           <p className="mt-4 xl:mt-6 max-w-2xl text-[15px] sm:text-[17px] xl:text-[19px] leading-relaxed" style={{ color: "rgba(180,210,230,0.65)" }}>
-            Ein Auszug meiner Arbeiten für diverse Kundenwebsiten – von der Konzeption bis zur fertigen, live geschalteten Website.
+            Ein Auszug aus meinen Arbeiten. Von der ersten Idee bis zur fertigen, live geschalteten Website.
           </p>
         </div>
       </FadeIn>
@@ -111,30 +111,24 @@ function PortfolioPreview() {
       </FadeIn>
 
       <FadeIn delay={0.2}>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <PrimaryButton onClick={() => navigate("/portfolio")}>
+        <div className="mt-10 flex flex-wrap items-center gap-5">
+          <GhostButton onClick={() => navigate("/portfolio")}>
             Alle Projekte ansehen
-          </PrimaryButton>
+          </GhostButton>
           <a
             href="https://gissler-webdesign/portfolio.de"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full px-6 py-3 transition-all duration-200"
-            style={{
-              background: "rgba(77, 190, 243, 0.07)",
-              border: "1px solid rgba(77, 190, 243, 0.2)",
-              color: "rgba(200, 235, 255, 0.85)",
-            }}
+            className="inline-flex items-center gap-2 font-medium transition-colors duration-200"
+            style={{ color: "rgba(150, 190, 220, 0.55)" }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(77, 190, 243, 0.13)";
-              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(77, 190, 243, 0.35)";
+              (e.currentTarget as HTMLAnchorElement).style.color = "rgba(200, 235, 255, 0.85)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(77, 190, 243, 0.07)";
-              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(77, 190, 243, 0.2)";
+              (e.currentTarget as HTMLAnchorElement).style.color = "rgba(150, 190, 220, 0.55)";
             }}
           >
-            Mein Portfolio <ExternalLink size={16} />
+            Persönliches Portfolio <ExternalLink size={16} />
           </a>
         </div>
       </FadeIn>
@@ -148,17 +142,17 @@ function Services() {
     {
       Icon: Palette,
       title: "Individuelles Design",
-      desc: "Deine Website sieht genau so aus, wie du es dir vorstellst – kein vorgefertigtes Template, sondern ein eigenes Design für dich.",
+      desc: "Deine Website sieht genau so aus, wie du es dir vorstellst. Kein vorgefertigtes Template, sondern ein eigenes Design für dich.",
     },
     {
       Icon: Code2,
       title: "Technische Umsetzung",
-      desc: "Ich baue alles sauber und modern – schnelle Ladezeiten, gut bei Google auffindbar, auf Handy und PC perfekt nutzbar.",
+      desc: "Alles sauber und modern gebaut. Schnelle Ladezeiten, gut bei Google auffindbar und auf Handy wie PC perfekt nutzbar.",
     },
     {
       Icon: Rocket,
       title: "Fertig live, sofort nutzbar",
-      desc: "Domain, Hosting, Einrichtung – ich kümmere mich um alles. Du bekommst eine fertige Website und kannst sofort loslegen.",
+      desc: "Domain, Hosting, Einrichtung. Ich kümmere mich um alles. Du bekommst eine fertige Website und kannst sofort loslegen.",
     },
   ];
 
@@ -171,7 +165,7 @@ function Services() {
             Alles, was du für deine Website brauchst.
           </h2>
           <p className="mt-4 xl:mt-6 max-w-2xl text-[15px] sm:text-[17px] xl:text-[19px] leading-relaxed" style={{ color: "rgba(180,210,230,0.65)" }}>
-            Ich übernehme alles – Design, Entwicklung und Hosting. Du musst dich um nichts kümmern.
+            Ich übernehme alles: Design, Entwicklung und Hosting. Du musst dich um nichts kümmern.
           </p>
         </div>
       </FadeIn>
@@ -232,20 +226,20 @@ function AboutPreview() {
             style={{ color: "rgba(200, 225, 240, 0.8)" }}
           >
             Webdesigner und Entwickler aus Triberg im Schwarzwald.
-            Ich kümmere mich komplett um deine Website – Design, Technik und alles, was dazugehört.
+            Ich kümmere mich komplett um deine Website: Design, Technik und alles, was dazugehört.
           </p>
           <p
             className="text-[14px] sm:text-[15px] xl:text-[17px] leading-relaxed mb-4"
             style={{ color: "rgba(180, 210, 230, 0.6)" }}
           >
-            Mein Ziel ist eine ansprechende Website, mit der deine Kunden sofort verstehen, was du anbietest –
+            Mein Ziel ist eine Website, bei der deine Kunden sofort verstehen, was du anbietest
             und dich gerne kontaktieren.
           </p>
           <p
             className="text-[14px] sm:text-[15px] xl:text-[17px] leading-relaxed mb-8 xl:mb-10"
             style={{ color: "rgba(180, 210, 230, 0.6)" }}
           >
-            Und ich bin persönlich für dich da – du schreibst immer direkt mit mir.
+            Ich bin persönlich für dich da. Du schreibst immer direkt mit mir.
           </p>
           <GhostButton onClick={() => navigate("/ueber-mich")}>
             Mehr über mich
@@ -348,7 +342,7 @@ function Contact() {
             className="text-[14px] sm:text-[15px] xl:text-[17px] leading-relaxed mb-8 max-w-md xl:max-w-lg"
             style={{ color: "rgba(180, 210, 230, 0.6)" }}
           >
-            Schreib mir kurz, was du brauchst – ich melde mich innerhalb von 24 Stunden
+            Schreib mir kurz, was du brauchst. Ich melde mich innerhalb von 24 Stunden
             mit einer ersten Einschätzung. Kostenlos, unverbindlich, unkompliziert.
           </p>
           <div className="space-y-3 text-[14px] xl:text-[16px]">

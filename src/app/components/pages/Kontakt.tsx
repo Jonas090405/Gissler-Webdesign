@@ -24,7 +24,6 @@ type FormData = {
   name: string;
   email: string;
   phone: string;
-  subject: string;
   message: string;
 };
 
@@ -46,8 +45,7 @@ function validate(data: FormData): FormErrors {
   if (data.phone.trim() && !/^[\+\d\s\-\(\)\/]{6,20}$/.test(data.phone.trim()))
     e.phone = "Bitte eine gültige Telefonnummer eingeben.";
 
-  if (!data.subject.trim())
-    e.subject = "Betreff ist erforderlich.";
+
 
   if (!data.message.trim())
     e.message = "Nachricht ist erforderlich.";
@@ -61,7 +59,7 @@ export function Kontakt() {
   const [mode, setMode] = useState<ContactMode>("form");
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
   const [formData, setFormData] = useState<FormData>({
-    name: "", email: "", phone: "", subject: "", message: "",
+    name: "", email: "", phone: "", message: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
 
@@ -86,7 +84,7 @@ export function Kontakt() {
           from_name: formData.name,
           from_email: formData.email,
           phone: formData.phone.trim() || "–",
-          subject: formData.subject,
+          subject: "Anfrage über Kontaktseite",
           message: formData.message,
         },
         EMAILJS_PUBLIC_KEY,
@@ -108,8 +106,8 @@ export function Kontakt() {
           </span>
         </h1>
         <p className="text-slate-400 text-[15px] sm:text-[16px] leading-relaxed max-w-xl mb-14">
-          Ich melde mich innerhalb von 24 Stunden mit einer ersten Einschätzung –
-          kostenlos, unverbindlich, unkompliziert.
+          Ich melde mich innerhalb von 24 Stunden mit einer ersten Einschätzung.
+          Kostenlos, unverbindlich, unkompliziert.
         </p>
       </FadeIn>
 
@@ -186,14 +184,7 @@ export function Kontakt() {
                     error={errors.phone}
                     placeholder="+49 123 456789"
                   />
-                  <Field
-                    label="Betreff *"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={v => handleChange("subject", v)}
-                    error={errors.subject}
-                    placeholder="z. B. Neue Website für mein Café"
-                  />
+
                   <Field
                     label="Nachricht *"
                     name="message"
@@ -201,7 +192,7 @@ export function Kontakt() {
                     value={formData.message}
                     onChange={v => handleChange("message", v)}
                     error={errors.message}
-                    placeholder="Erzähl mir kurz, was du brauchst – Branche, Ziel, Wünsche…"
+                    placeholder="Erzähl mir kurz, was du brauchst. Branche, Ziel, Wünsche…"
                   />
 
                   {status === "error" && (

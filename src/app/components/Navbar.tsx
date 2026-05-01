@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import logoUrl from "../../imports/Logo_Gissler-webdesign.svg";
 
 const items = [
-  { id: "/portfolio", label: "Portfolio", Icon: Briefcase },
+  { id: "/portfolio", label: "Projekte", Icon: Briefcase },
   { id: "/leistungen", label: "Leistungen", Icon: Layers },
   { id: "/ueber-mich", label: "Über mich", Icon: User },
   { id: "/kontakt", label: "Kontakt", Icon: Mail },
@@ -84,8 +84,9 @@ export function Navbar() {
                   <button
                     key={id}
                     onClick={() => navigate(id)}
-                    className="nav-item group flex items-center gap-2.5 text-[16px] font-medium transition-colors duration-200 cursor-pointer relative py-1.5 whitespace-nowrap pointer-events-auto"
-                    style={{ color: active ? "#ffffff" : "rgba(200,220,235,0.65)" }}
+                    className="nav-item group flex items-center gap-2.5 font-medium cursor-pointer relative py-1.5 whitespace-nowrap pointer-events-auto"
+                    style={{ color: active ? "#ffffff" : "rgba(200,220,235,0.65)", fontSize: scrolled ? "15px" : "17px", transition: "color 0.2s, font-size 0.35s ease" }}
+
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLButtonElement).style.color = "#ffffff";
                       const bar = e.currentTarget.querySelector(".underline-bar") as HTMLElement | null;
