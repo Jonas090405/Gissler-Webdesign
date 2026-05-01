@@ -13,51 +13,51 @@ export function DesignerSVG({ className }: { className?: string }) {
           /* Multi-stop keyframes → smoother sinusoidal curve */
           @keyframes sf1 {
             0%   { transform: translateY(0px); }
-            25%  { transform: translateY(-8px); }
-            50%  { transform: translateY(-16px); }
-            75%  { transform: translateY(-8px); }
+            25%  { transform: translateY(-11px); }
+            50%  { transform: translateY(-22px); }
+            75%  { transform: translateY(-11px); }
             100% { transform: translateY(0px); }
           }
           @keyframes sf2 {
             0%   { transform: translateY(0px); }
-            25%  { transform: translateY(-6px); }
-            50%  { transform: translateY(-12px); }
-            75%  { transform: translateY(-6px); }
+            25%  { transform: translateY(-8px); }
+            50%  { transform: translateY(-17px); }
+            75%  { transform: translateY(-8px); }
             100% { transform: translateY(0px); }
           }
           @keyframes sf3 {
             0%   { transform: translateY(0px); }
-            25%  { transform: translateY(-5px); }
-            50%  { transform: translateY(-10px); }
-            75%  { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
-          }
-          @keyframes sf4 {
-            0%   { transform: translateY(0px); }
             25%  { transform: translateY(-7px); }
-            50%  { transform: translateY(-13px); }
+            50%  { transform: translateY(-14px); }
             75%  { transform: translateY(-7px); }
             100% { transform: translateY(0px); }
           }
-          @keyframes sf5 {
+          @keyframes sf4 {
             0%   { transform: translateY(0px); }
             25%  { transform: translateY(-10px); }
             50%  { transform: translateY(-18px); }
             75%  { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
           }
+          @keyframes sf5 {
+            0%   { transform: translateY(0px); }
+            25%  { transform: translateY(-14px); }
+            50%  { transform: translateY(-25px); }
+            75%  { transform: translateY(-14px); }
+            100% { transform: translateY(0px); }
+          }
           @keyframes sf6 {
             0%   { transform: translateY(0px); }
-            25%  { transform: translateY(-6px); }
-            50%  { transform: translateY(-11px); }
-            75%  { transform: translateY(-6px); }
+            25%  { transform: translateY(-8px); }
+            50%  { transform: translateY(-15px); }
+            75%  { transform: translateY(-8px); }
             100% { transform: translateY(0px); }
           }
           @keyframes sf7 {
             0%   { transform: translateY(0px); }
-            25%  { transform: translateY(-7px); }
-            50%  { transform: translateY(-14px); }
-            75%  { transform: translateY(-7px); }
+            25%  { transform: translateY(-10px); }
+            50%  { transform: translateY(-20px); }
+            75%  { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
           }
           .sg1 { animation: sf1 6.0s ease-in-out infinite 0.0s;  transform-box: fill-box; transform-origin: center; }

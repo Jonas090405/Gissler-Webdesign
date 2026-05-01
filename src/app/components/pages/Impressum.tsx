@@ -76,7 +76,7 @@ export function Impressum() {
         <FadeIn delay={0.25}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+              Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
             </div>
             <div className="text-slate-200 text-[15px] leading-[1.9]">
               Jonas Gissler

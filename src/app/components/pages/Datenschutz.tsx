@@ -54,7 +54,18 @@ export function Datenschutz() {
         <FadeIn delay={0.15}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              3. Server-Logfiles
+              3. SSL- bzw. TLS-Verschlüsselung
+            </div>
+            <p className="text-slate-300 text-[14px] leading-relaxed">
+              Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Anfragen, die du an mich als Seitenbetreiber sendest, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in deiner Browserzeile. Wenn die Verschlüsselung aktiviert ist, können die Daten, die du an mich übermittelst, nicht von Dritten mitgelesen werden.
+            </p>
+          </Card>
+        </FadeIn>
+
+        <FadeIn delay={0.2}>
+          <Card>
+            <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
+              4. Server-Logfiles
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
               Beim Aufruf der Website werden automatisch technisch notwendige
@@ -67,10 +78,10 @@ export function Datenschutz() {
           </Card>
         </FadeIn>
 
-        <FadeIn delay={0.2}>
+        <FadeIn delay={0.25}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              4. Kontaktformular &amp; E-Mail-Kontakt
+              5. Kontaktformular &amp; E-Mail-Kontakt
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
               Wenn du mir über das Kontaktformular oder per E-Mail Anfragen
@@ -82,10 +93,10 @@ export function Datenschutz() {
           </Card>
         </FadeIn>
 
-        <FadeIn delay={0.25}>
+        <FadeIn delay={0.3}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              5. Cookies
+              6. Cookies
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
               Diese Website verwendet ausschließlich technisch notwendige
@@ -95,10 +106,10 @@ export function Datenschutz() {
           </Card>
         </FadeIn>
 
-        <FadeIn delay={0.3}>
+        <FadeIn delay={0.35}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              6. Deine Rechte
+              7. Deine Rechte
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
               Du hast jederzeit das Recht auf Auskunft, Berichtigung,
@@ -111,10 +122,10 @@ export function Datenschutz() {
           </Card>
         </FadeIn>
 
-        <FadeIn delay={0.35}>
+        <FadeIn delay={0.4}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              7. Hosting – GitHub Pages
+              8. Hosting – GitHub Pages
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
               Diese Website wird über <strong className="text-slate-200">GitHub Pages</strong> gehostet,
@@ -137,10 +148,10 @@ export function Datenschutz() {
           </Card>
         </FadeIn>
 
-        <FadeIn delay={0.4}>
+        <FadeIn delay={0.45}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              8. Kontaktformular – EmailJS
+              9. Kontaktformular – EmailJS
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
               Das Kontaktformular dieser Website nutzt den Dienst{" "}
@@ -164,10 +175,10 @@ export function Datenschutz() {
           </Card>
         </FadeIn>
 
-        <FadeIn delay={0.45}>
+        <FadeIn delay={0.5}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              9. Speicherdauer
+              10. Speicherdauer
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
               Personenbezogene Daten werden nur so lange gespeichert, wie es
