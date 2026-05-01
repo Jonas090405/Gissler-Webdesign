@@ -106,9 +106,11 @@ export function About() {
                 "React",
                 "TypeScript",
                 "Tailwind",
-                "Next.js",
                 "Motion",
                 "Vercel",
+                "EmailJS",
+                "Google Analytics",
+                "GitHub",
               ].map((t) => (
                 <span
                   key={t}

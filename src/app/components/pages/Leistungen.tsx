@@ -77,7 +77,6 @@ const blocks = [
       "Modernste Technik im Hintergrund",
       "Schnelle Ladezeiten",
       "Gut bei Google auffindbar",
-      "Wartbar & erweiterbar",
       "Funktionen, auf deine Bedürfnisse angepasst",
     ],
   },
@@ -87,7 +86,7 @@ const blocks = [
     lead: "Du musst dich um nichts kümmern.",
     points: [
       "Domain-Setup & Hosting inklusive",
-      "SSL & Datenschutz eingerichtet",
+      "DSGVO-konform eingerichtet",
       "Fertig live auf deiner Wunsch-Domain",
       "Ich bin auch nach dem Launch da",
     ],
@@ -133,6 +132,49 @@ export function Leistungen() {
           </FadeIn>
         ))}
       </div>
+
+      {/* Extra services */}
+      <FadeIn>
+        <div className="mt-14">
+          <h2 className="text-white text-[clamp(22px,3vw,32px)] tracking-tight max-w-xl mb-3">
+            Du brauchst noch etwas anderes?
+          </h2>
+          <p className="text-slate-400 text-[15px] leading-relaxed max-w-xl mb-7">
+            Kein Problem – sag mir, was du brauchst, und wir finden gemeinsam eine Lösung.
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {[
+              "Google Analytics Tracking",
+              "Content Management System",
+              "Admin Panel",
+              "Mehrsprachigkeit",
+              "Online-Shop",
+              "Buchungssystem",
+              "Newsletter-Integration",
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-full px-4 py-1.5 text-[13px] text-sky-300"
+                style={{
+                  background: "rgba(77, 190, 243, 0.07)",
+                  border: "1px solid rgba(77, 190, 243, 0.18)",
+                }}
+              >
+                {item}
+              </span>
+            ))}
+            <span
+              className="rounded-full px-4 py-1.5 text-[13px] text-slate-500"
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.07)",
+              }}
+            >
+              & vieles mehr …
+            </span>
+          </div>
+        </div>
+      </FadeIn>
 
       {/* Timeline */}
       <div className="mt-24">
