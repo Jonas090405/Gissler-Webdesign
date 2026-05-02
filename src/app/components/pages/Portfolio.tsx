@@ -46,9 +46,7 @@ export function Portfolio() {
             Hochschulprojekte &amp; Eigenarbeiten
           </h2>
           <p className="text-slate-400 text-[14px] leading-relaxed max-w-xl mb-7">
-            Über meine Studienzeit und Nebenprojekte sind zahlreiche
-            UX/UI-Arbeiten entstanden. Diese findest du gebündelt in
-            meinem persönlichen Portfolio.
+            Im Laufe meines Studiums und durch private Nebenprojekte sind zahlreiche Arbeiten entstanden. Diese findest du gebündelt in meinem persönlichen Portfolio.
           </p>
           <a
             href="https://gissler-webdesign/portfolio.de"

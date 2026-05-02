@@ -33,8 +33,7 @@ export function About() {
             style={{ color: "rgba(180, 210, 230, 0.6)" }}
           >
             Aktuell studiere ich Medienkonzeption an der Hochschule Furtwangen
-            mit Fokus auf Design und Nutzererfahrung. Diese Kombination aus
-            Gestaltung und Technik bringe ich direkt in jedes Projekt ein.
+            mit Fokus auf Webdesign und Nutzererfahrung. Nebenbei arbeite ich ich als Softwaredesigner bei M&M Software. <br />Mein Fachwissen aus Studium und Beruf bringe ich direkt in den Projekt ein.
           </p>
         </FadeIn>
 
@@ -85,9 +84,9 @@ export function About() {
               className="space-y-3 text-[14px]"
               style={{ color: "rgba(200, 225, 240, 0.8)" }}
             >
-              <li>Studium Medienkonzeption (HFU Furtwangen)</li>
-              <li>Schwerpunkt UX/UI & Frontend-Entwicklung</li>
-              <li>Arbeitserfahrung als Designer</li>
+              <li>Studium Medienkonzeption im 6. Semester (HFU Furtwangen)</li>
+              <li>Schwerpunkt UX/UI Design & Frontend-Entwicklung</li>
+              <li>Arbeitserfahrung als Softwaredesigner</li>
               <li>Aus Triberg im Schwarzwald</li>
             </ul>
           </Card>
@@ -104,13 +103,16 @@ export function About() {
               {[
                 "Figma",
                 "React",
+                "KI",
                 "TypeScript",
-                "Tailwind",
-                "Motion",
+                "TailwindCSS",
+                "Motiondesign",
                 "Vercel",
                 "EmailJS",
                 "Google Analytics",
                 "GitHub",
+                "Strapi",
+                "Supabase",
               ].map((t) => (
                 <span
                   key={t}

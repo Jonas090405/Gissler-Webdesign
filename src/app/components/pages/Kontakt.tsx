@@ -9,9 +9,9 @@ import emailjs from "@emailjs/browser";
 // ─── EmailJS-Konfiguration ────────────────────────────────────────────────────
 // IDs kommen aus .env (nie in Git pushen!):
 //   VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY
-const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  as string;
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
-const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  as string;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
 const EMAIL_ADDRESS = "gissler.jonas@gmail.com";
 const PHONE_NUMBER = "+49 151 2079 7408";
 // Empfänger direkt im EmailJS-Template-Dashboard einstellen (To Email-Feld)

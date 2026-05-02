@@ -10,49 +10,49 @@ const timelineSteps = [
     icon: MessageCircle,
     step: "1",
     title: "Erstgespräch",
-    desc: "Wir reden ganz entspannt über dein Projekt. Was brauchst du? Was soll die Website können? Wie soll sie aussehen? Du musst kein Experte sein – ich erkläre alles verständlich und höre erst mal zu.",
+    desc: "Wir reden unverbindlich über dein Projekt. Was brauchst du? Was soll die Website können? Wie soll sie aussehen? Du musst kein Experte sein – ich erkläre alles verständlich und höre erst mal zu.",
     tag: "kostenlos & unverbindlich",
   },
   {
     icon: PenTool,
     step: "2",
-    title: "Design & Umsetzung",
-    desc: "Ich erstelle das Design und setze alles technisch um. Dabei habe ich deine Wünsche, deine Kunden und dein Ziel immer im Blick.",
-    tag: "du musst nichts tun",
+    title: "Design & Konzept",
+    desc: "Sobald die Rahmenbedingungen geklärt sind, entwickle ich ein individuelles Designkonzept nach deinen Anforderungen. In diesem Schritt liegt die visuelle Gestaltung im Vordergrund und wir definieren, wie dein Unternehmen nach außen wirkt.",
+    tag: "individuelles Design",
   },
   {
     icon: MessageCircle,
     step: "3",
     title: "2. Gespräch – Dein Feedback",
-    desc: "Ich zeige dir, wie deine Website bisher aussieht. Du sagst mir direkt, was dir gefällt und was du gerne anders hättest. Kein Vorwissen nötig – dein Gefühl zählt.",
+    desc: "Ich zeige dir, wie deine Seite aussehen wird und wie sie strukturiert ist. Du sagst mir direkt, was dir gefällt und was du gerne anders hättest. Hier zählt dein Gefühl.",
     tag: "deine Meinung ist wichtig",
   },
   {
-    icon: RefreshCw,
+    icon: Code2,
     step: "4",
-    title: "1. Überarbeitung",
-    desc: "Dein Feedback setze ich Schritt für Schritt um. Ich passe an, verfeinere und verbessere.",
-    tag: "auf deinen Wunsch abgestimmt",
+    title: "Technische Umsetzung",
+    desc: "Ich setze dein Feedback direkt um und integriere alle gewünschten Funktionen. In diesem Schritt liegt der Fokus auf der Funktionalität, Schnelligkeit und Sichtbarkeit deiner Website.",
+    tag: "sauber & modern",
   },
   {
-    icon: CheckSquare,
+    icon: MessageCircle,
     step: "5",
     title: "3. Gespräch – Letzter Check",
-    desc: "Wir gehen gemeinsam alles durch: Design, Texte, alle Funktionen. Jetzt ist noch Zeit für letzte Wünsche, bevor die Website live geht.",
+    desc: "Wir gehen gemeinsam die fertige Website durch. Wir testen alle Funktionen, prüfen die Texte auf dem Handy und am PC und schauen uns das Gesamtergebnis im Detail an.",
     tag: "alles unter Kontrolle",
   },
   {
     icon: RefreshCw,
     step: "6",
-    title: "2. Überarbeitung",
-    desc: "Hier kümmere ich mich um den Feinschliff und die letzten Details. Deine finalen Wünsche aus dem letzten Check werden punktgenau umgesetzt.",
+    title: "Feinschliff & Korrekturen",
+    desc: "Hier kümmere ich mich um den letzten Feinschliff. Deine finalen Wünsche aus dem letzten Check werden punktgenau umgesetzt, damit alles bereit für den Start ist.",
     tag: "der letzte feinschliff",
   },
   {
     icon: Globe,
     step: "7",
     title: "Fertig – deine Website ist live",
-    desc: "Deine Website geht online – fertig eingerichtet, auf deiner Domain, direkt nutzbar. Ich kümmere mich um Hosting, Domain und alles Technische. Du bekommst eine fertige Website und musst nichts selbst einrichten.",
+    desc: "Deine Website geht online – fertig eingerichtet, auf deiner Domain, direkt nutzbar. Ich kümmere mich um Hosting, Domain und alles Technische. Du bekommst ein fertiges Ergebnis.",
     tag: "komplett fertig & gehostet",
   },
 ];
@@ -103,9 +103,7 @@ export function Leistungen() {
           Deine Website – fertig, ohne Stress.
         </h1>
         <p className="mt-6 max-w-2xl text-[16px] text-slate-400 leading-relaxed">
-          Du bekommst alles aus einer Hand: Design, Technik und Veröffentlichung.
-          Kein Hin und Her mit verschiedenen Anbietern – ich mache das für dich.
-        </p>
+          Du bekommst alles aus einer Hand: von der Gestaltung über die technische Umsetzung bis hin zur Veröffentlichung. Ich kümmere mich um den gesamten Ablauf für dich.</p>
       </FadeIn>
 
       {/* Service cards */}
@@ -184,8 +182,8 @@ export function Leistungen() {
             Von der ersten Idee bis zur fertigen Website.
           </h2>
           <p className="text-slate-400 text-[15px] leading-relaxed max-w-xl mb-14">
-            Du weißt jederzeit, wo wir stehen. Kein Fachchinesisch, kein Rätselraten –
-            ich halte dich bei jedem Schritt auf dem Laufenden.
+            Du weißt jederzeit, wo wir stehen. Regelmäßige Feedbackschleifen stellen sicher,
+            dass wir am Ende genau das Ergebnis haben, das du dir vorstellst.
           </p>
         </FadeIn>
 

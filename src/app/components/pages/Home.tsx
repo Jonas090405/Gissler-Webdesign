@@ -165,7 +165,7 @@ function Services() {
             Alles, was du für deine Website brauchst.
           </h2>
           <p className="mt-4 xl:mt-6 max-w-2xl text-[15px] sm:text-[17px] xl:text-[19px] leading-relaxed" style={{ color: "rgba(180,210,230,0.65)" }}>
-            Ich übernehme alles: Design, Entwicklung und Hosting. Du musst dich um nichts kümmern.
+            Ich übernehme alles: Design, Entwicklung und Hosting.<br />Du musst dich um nichts kümmern.
           </p>
         </div>
       </FadeIn>
@@ -230,7 +230,7 @@ function AboutPreview() {
             style={{ color: "rgba(200, 225, 240, 0.8)" }}
           >
             Webdesigner und Entwickler aus Triberg im Schwarzwald.
-            Ich kümmere mich komplett um deine Website: Design, Technik und alles, was dazugehört.
+            Ich kümmere mich komplett um deine Website: Design, Technik, Hosting und alles, was dazugehört.
           </p>
           <p
             className="text-[14px] sm:text-[15px] xl:text-[17px] leading-relaxed mb-4"
