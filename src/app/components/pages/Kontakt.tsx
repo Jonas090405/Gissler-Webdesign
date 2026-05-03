@@ -106,8 +106,8 @@ export function Kontakt() {
           </span>
         </h1>
         <p className="text-slate-400 text-[15px] sm:text-[16px] leading-relaxed max-w-xl mb-14">
-          Ich melde mich innerhalb von 24 Stunden mit einer ersten Einschätzung.
-          Kostenlos, unverbindlich, unkompliziert.
+          Ich melde mich innerhalb von 24 Stunden
+          mit einer ersten Einschätzung und einem unverbindlichen Termin.
         </p>
       </FadeIn>
 
@@ -280,8 +280,7 @@ function CallCard({ phone }: { phone: string }) {
           </a>
         </div>
         <p className="text-slate-500 text-[13px] max-w-xs leading-relaxed">
-          Erreichbar Mo – Fr, 9 – 18 Uhr. Außerhalb dieser Zeiten kannst du auch
-          gerne eine Nachricht hinterlassen.
+          Falls du mich nicht erreichen solltest, hinterlasse eine Nachricht mit deinem Namen und deiner Telefonnummer. Ich melde mich schnellstmöglich zurück.
         </p>
         <a
           href={`tel:${phone.replace(/[\s\-\(\)]/g, "")}`}

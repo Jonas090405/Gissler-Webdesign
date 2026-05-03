@@ -99,8 +99,17 @@ export function Leistungen() {
     <main className="mx-auto max-w-6xl px-5 sm:px-6 pt-36 sm:pt-44 pb-12">
       <FadeIn>
         <SectionLabel>Leistungen</SectionLabel>
-        <h1 className="text-white text-[clamp(36px,6vw,72px)] tracking-tight leading-[1.05] max-w-3xl">
-          Deine Website – fertig, ohne Stress.
+        <h1 className="text-white text-[clamp(36px,6vw,72px)] tracking-tight leading-[1.05] max-w-4xl">
+          <span
+            className="bg-clip-text text-transparent"
+            style={{
+              backgroundImage:
+                "linear-gradient(135deg, #4dbef3 0%, #006999 100%)",
+            }}
+          >
+            Deine Website
+          </span>{" "}
+          – fertig, ohne Stress.
         </h1>
         <p className="mt-6 max-w-2xl text-[16px] text-slate-400 leading-relaxed">
           Du bekommst alles aus einer Hand: von der Gestaltung über die technische Umsetzung bis hin zur Veröffentlichung. Ich kümmere mich um den gesamten Ablauf für dich.</p>

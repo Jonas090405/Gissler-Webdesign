@@ -97,11 +97,11 @@ function PortfolioPreview() {
       <FadeIn>
         <SectionLabel>Projekte</SectionLabel>
         <div className="mb-8 sm:mb-10 xl:mb-14">
-          <h2 className="text-white text-[clamp(28px,4.5vw,64px)] tracking-tight max-w-xl xl:max-w-2xl">
+          <h2 className="text-white text-[clamp(28px,4.5vw,64px)] tracking-tight max-w-4xl">
             Projekte, die ich umgesetzt habe
           </h2>
           <p className="mt-4 xl:mt-6 max-w-2xl text-[15px] sm:text-[17px] xl:text-[19px] leading-relaxed" style={{ color: "rgba(180,210,230,0.65)" }}>
-            Ein Auszug aus meinen Arbeiten. Von der ersten Idee bis zur fertigen, live geschalteten Website.
+            Eine Auswahl aktueller Kundenarbeiten.
           </p>
         </div>
       </FadeIn>
@@ -161,7 +161,7 @@ function Services() {
       <FadeIn>
         <SectionLabel>Leistungen</SectionLabel>
         <div className="mb-10 sm:mb-12 xl:mb-16">
-          <h2 className="text-white text-[clamp(28px,4.5vw,64px)] tracking-tight max-w-xl xl:max-w-2xl">
+          <h2 className="text-white text-[clamp(28px,4.5vw,64px)] tracking-tight max-w-4xl">
             Alles, was du für deine Website brauchst.
           </h2>
           <p className="mt-4 xl:mt-6 max-w-2xl text-[15px] sm:text-[17px] xl:text-[19px] leading-relaxed" style={{ color: "rgba(180,210,230,0.65)" }}>
@@ -346,8 +346,8 @@ function Contact() {
             className="text-[14px] sm:text-[15px] xl:text-[17px] leading-relaxed mb-8 max-w-md xl:max-w-lg"
             style={{ color: "rgba(180, 210, 230, 0.6)" }}
           >
-            Schreib mir kurz, was du brauchst. Ich melde mich innerhalb von 24 Stunden
-            mit einer ersten Einschätzung. Kostenlos, unverbindlich, unkompliziert.
+            Ich melde mich innerhalb von 24 Stunden
+            mit einer ersten Einschätzung und einem unverbindlichen Termin.
           </p>
           <div className="space-y-3 text-[14px] xl:text-[16px]">
             <div>

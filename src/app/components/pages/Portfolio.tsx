@@ -26,12 +26,20 @@ export function Portfolio() {
     <main className="mx-auto max-w-6xl px-5 sm:px-6 pt-36 sm:pt-44 pb-12">
       <FadeIn>
         <SectionLabel>Projekte</SectionLabel>
-        <h1 className="text-white text-[clamp(32px,6vw,72px)] tracking-tight leading-[1.05] max-w-3xl">
-          Projekte, die für sich sprechen.
+        <h1 className="text-white text-[clamp(32px,6vw,72px)] tracking-tight leading-[1.05] max-w-4xl">
+          Projekte, die{" "}
+          <span
+            className="bg-clip-text text-transparent"
+            style={{
+              backgroundImage:
+                "linear-gradient(135deg, #4dbef3 0%, #006999 100%)",
+            }}
+          >
+            für sich sprechen.
+          </span>
         </h1>
         <p className="mt-5 sm:mt-6 max-w-2xl text-[15px] sm:text-[16px] text-slate-400 leading-relaxed">
-          Eine Auswahl aktueller Kundenarbeiten. Weitere Projekte folgen
-          in Kürze.
+          Eine Auswahl aktueller Kundenarbeiten.
         </p>
       </FadeIn>
 

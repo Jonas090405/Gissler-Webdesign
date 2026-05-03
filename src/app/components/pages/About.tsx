@@ -18,7 +18,16 @@ export function About() {
       <div className="mt-4 grid gap-10 md:gap-16 md:grid-cols-5 items-center">
         <FadeIn className="md:col-span-3">
           <h1 className="text-white text-[clamp(36px,6vw,72px)] tracking-tight leading-[1.05]">
-            Hi, ich bin Jonas.
+            Hi, ich bin{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage:
+                  "linear-gradient(135deg, #4dbef3 0%, #006999 100%)",
+              }}
+            >
+              Jonas.
+            </span>
           </h1>
           <p
             className="mt-6 text-[16px] sm:text-[17px] leading-relaxed"
