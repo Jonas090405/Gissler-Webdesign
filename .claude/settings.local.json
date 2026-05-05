@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm install *)",
-      "Bash(dir /b \"g:\\\\Fertige_Projekte\\\\Gissler-Webdesign\\\\Freelance Web Design Website\\\\Gissler-Webdesign\")"
+      "Bash(dir /b \"g:\\\\Fertige_Projekte\\\\Gissler-Webdesign\\\\Freelance Web Design Website\\\\Gissler-Webdesign\")",
+      "Bash(npx tsc *)"
     ]
   }
 }

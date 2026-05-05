@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { SectionLabel } from "../SectionLabel";
 import { PrimaryButton, GhostButton } from "../Button";
 import { Card } from "../Card";
@@ -330,8 +330,15 @@ function validateHome(d: HomeFormData): HomeFormErrors {
   return e;
 }
 
+const slideVariants = {
+  enter: (d: number) => ({ x: d * 40, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (d: number) => ({ x: d * -40, opacity: 0 }),
+};
+
 function Contact() {
   const [mode, setMode] = useState<"form" | "call">("form");
+  const [direction, setDirection] = useState(0);
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
   const [formData, setFormData] = useState<HomeFormData>({ name: "", email: "", phone: "", message: "" });
   const [errors, setErrors] = useState<HomeFormErrors>({});
@@ -414,14 +421,25 @@ function Contact() {
               border: "1px solid rgba(77,190,243,0.12)",
             }}
           >
-            <HomeTabBtn active={mode === "form"} onClick={() => setMode("form")}>
+            <HomeTabBtn active={mode === "form"} onClick={() => { setDirection(-1); setMode("form"); }}>
               Anfrage senden
             </HomeTabBtn>
-            <HomeTabBtn active={mode === "call"} onClick={() => setMode("call")}>
+            <HomeTabBtn active={mode === "call"} onClick={() => { setDirection(1); setMode("call"); }}>
               Direkt anrufen
             </HomeTabBtn>
           </div>
 
+          <div className="overflow-hidden">
+          <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={mode}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+          >
           {mode === "call" ? (
             <Card>
               <div className="py-8 flex flex-col items-center text-center gap-5">
@@ -513,6 +531,9 @@ function Contact() {
               )}
             </Card>
           )}
+          </motion.div>
+          </AnimatePresence>
+          </div>
         </FadeIn>
       </div>
     </section>
@@ -532,14 +553,18 @@ function HomeTabBtn({
     <button
       type="button"
       onClick={onClick}
-      className="flex-1 rounded-lg px-4 py-2.5 text-[13px] font-medium tracking-wide transition-all duration-200"
-      style={
-        active
-          ? { background: "linear-gradient(135deg, #006999 0%, #4dbef3 100%)", color: "#fff" }
-          : { background: "transparent", color: "rgba(150,190,220,0.6)" }
-      }
+      className="relative flex-1 rounded-lg px-4 py-2.5 text-[13px] font-medium tracking-wide cursor-pointer transition-colors duration-200"
+      style={{ color: active ? "#fff" : "rgba(150,190,220,0.6)" }}
     >
-      {children}
+      {active && (
+        <motion.div
+          layoutId="home-tab-pill"
+          className="absolute inset-0 rounded-lg"
+          style={{ background: "linear-gradient(135deg, #006999 0%, #4dbef3 100%)" }}
+          transition={{ type: "spring", stiffness: 400, damping: 35 }}
+        />
+      )}
+      <span className="relative z-10">{children}</span>
     </button>
   );
 }

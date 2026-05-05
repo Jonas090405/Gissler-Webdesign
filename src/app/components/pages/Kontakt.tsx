@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { SectionLabel } from "../SectionLabel";
 import { PrimaryButton } from "../Button";
 import { Card } from "../Card";
@@ -55,8 +56,15 @@ function validate(data: FormData): FormErrors {
   return e;
 }
 
+const slideVariants = {
+  enter: (d: number) => ({ x: d * 40, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (d: number) => ({ x: d * -40, opacity: 0 }),
+};
+
 export function Kontakt() {
   const [mode, setMode] = useState<ContactMode>("form");
+  const [direction, setDirection] = useState(0);
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
   const [formData, setFormData] = useState<FormData>({
     name: "", email: "", phone: "", message: "",
@@ -143,84 +151,95 @@ export function Kontakt() {
               border: "1px solid rgba(77,190,243,0.12)",
             }}
           >
-            <TabBtn active={mode === "form"} onClick={() => setMode("form")}>
+            <TabBtn active={mode === "form"} onClick={() => { setDirection(-1); setMode("form"); }}>
               Anfrage senden
             </TabBtn>
-            <TabBtn active={mode === "call"} onClick={() => setMode("call")}>
+            <TabBtn active={mode === "call"} onClick={() => { setDirection(1); setMode("call"); }}>
               Direkt anrufen
             </TabBtn>
           </div>
 
-          {mode === "call" ? (
-            <CallCard phone={PHONE_NUMBER} />
-          ) : (
-            <Card>
-              {status === "sent" ? (
-                <SuccessState />
-              ) : (
-                <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <Field
-                      label="Name *"
-                      name="name"
-                      value={formData.name}
-                      onChange={v => handleChange("name", v)}
-                      error={errors.name}
-                      placeholder="Max Mustermann"
-                    />
-                    <Field
-                      label="E-Mail *"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={v => handleChange("email", v)}
-                      error={errors.email}
-                      placeholder="max@beispiel.de"
-                    />
-                  </div>
-                  <Field
-                    label="Telefon (optional)"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={v => handleChange("phone", v)}
-                    error={errors.phone}
-                    placeholder="+49 123 456789"
-                  />
-
-                  <Field
-                    label="Nachricht *"
-                    name="message"
-                    textarea
-                    value={formData.message}
-                    onChange={v => handleChange("message", v)}
-                    error={errors.message}
-                    placeholder="Erzähl mir kurz, was du brauchst. Branche, Ziel, Wünsche…"
-                  />
-
-                  {status === "error" && (
-                    <p className="text-red-400 text-[13px] leading-relaxed">
-                      Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut
-                      oder schreib mir direkt an{" "}
-                      <a
-                        href="mailto:gissler.jonas@gmail.com"
-                        className="underline hover:text-red-300 transition-colors"
-                      >
-                        gissler.jonas@gmail.com
-                      </a>
-                      .
-                    </p>
-                  )}
-
-                  <div className="pt-1">
-                    <PrimaryButton type="submit" disabled={status === "loading"}>
-                      {status === "loading" ? "Wird gesendet…" : "Projekt anfragen"}
-                    </PrimaryButton>
-                  </div>
-                </form>
-              )}
-            </Card>
-          )}
+          <div className="overflow-hidden">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={mode}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              >
+                {mode === "call" ? (
+                  <CallCard phone={PHONE_NUMBER} />
+                ) : (
+                  <Card>
+                    {status === "sent" ? (
+                      <SuccessState />
+                    ) : (
+                      <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                        <div className="grid gap-5 sm:grid-cols-2">
+                          <Field
+                            label="Name *"
+                            name="name"
+                            value={formData.name}
+                            onChange={v => handleChange("name", v)}
+                            error={errors.name}
+                            placeholder="Max Mustermann"
+                          />
+                          <Field
+                            label="E-Mail *"
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={v => handleChange("email", v)}
+                            error={errors.email}
+                            placeholder="max@beispiel.de"
+                          />
+                        </div>
+                        <Field
+                          label="Telefon (optional)"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={v => handleChange("phone", v)}
+                          error={errors.phone}
+                          placeholder="+49 123 456789"
+                        />
+                        <Field
+                          label="Nachricht *"
+                          name="message"
+                          textarea
+                          value={formData.message}
+                          onChange={v => handleChange("message", v)}
+                          error={errors.message}
+                          placeholder="Erzähl mir kurz, was du brauchst. Branche, Ziel, Wünsche…"
+                        />
+                        {status === "error" && (
+                          <p className="text-red-400 text-[13px] leading-relaxed">
+                            Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut
+                            oder schreib mir direkt an{" "}
+                            <a
+                              href="mailto:gissler.jonas@gmail.com"
+                              className="underline hover:text-red-300 transition-colors"
+                            >
+                              gissler.jonas@gmail.com
+                            </a>
+                            .
+                          </p>
+                        )}
+                        <div className="pt-1">
+                          <PrimaryButton type="submit" disabled={status === "loading"}>
+                            {status === "loading" ? "Wird gesendet…" : "Projekt anfragen"}
+                          </PrimaryButton>
+                        </div>
+                      </form>
+                    )}
+                  </Card>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </FadeIn>
       </div>
     </main>
@@ -242,20 +261,18 @@ function TabBtn({
     <button
       type="button"
       onClick={onClick}
-      className="flex-1 rounded-lg px-4 py-2.5 text-[13px] font-medium tracking-wide transition-all duration-200"
-      style={
-        active
-          ? {
-            background: "linear-gradient(135deg, #006999 0%, #4dbef3 100%)",
-            color: "#fff",
-          }
-          : {
-            background: "transparent",
-            color: "rgba(150,190,220,0.6)",
-          }
-      }
+      className="relative flex-1 rounded-lg px-4 py-2.5 text-[13px] font-medium tracking-wide cursor-pointer transition-colors duration-200"
+      style={{ color: active ? "#fff" : "rgba(150,190,220,0.6)" }}
     >
-      {children}
+      {active && (
+        <motion.div
+          layoutId="kontakt-tab-pill"
+          className="absolute inset-0 rounded-lg"
+          style={{ background: "linear-gradient(135deg, #006999 0%, #4dbef3 100%)" }}
+          transition={{ type: "spring", stiffness: 400, damping: 35 }}
+        />
+      )}
+      <span className="relative z-10">{children}</span>
     </button>
   );
 }
