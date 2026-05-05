@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Briefcase, Layers, User, Mail, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useLocation, useNavigate } from "react-router-dom";
-import logoUrl from "../../imports/Logo_Gissler-webdesign.svg";
+import logoUrl from "../../imports/Logo-Gissler-webdesign.svg";
 
 const items = [
   { id: "/portfolio", label: "Projekte", Icon: Briefcase },
@@ -69,7 +69,7 @@ export function Navbar() {
                 <img
                   src={logoUrl}
                   alt="Gissler Webdesign Logo"
-                  style={{ height: scrolled ? "30px" : "36px", transition: "height 0.3s ease", width: "auto" }}
+                  style={{ height: scrolled ? "36px" : "44px", transition: "height 0.3s ease", width: "auto" }}
                 />
               </button>
             </div>
@@ -140,7 +140,7 @@ export function Navbar() {
           aria-label="Zur Startseite"
           className="cursor-pointer hover:opacity-75 transition-opacity duration-200"
         >
-          <img src={logoUrl} alt="Gissler Webdesign Logo" className="h-6 w-auto" />
+          <img src={logoUrl} alt="Gissler Webdesign Logo" className="h-9 w-auto" />
         </button>
 
         <button
@@ -182,7 +182,7 @@ export function Navbar() {
                   aria-label="Zur Startseite"
                   className="cursor-pointer hover:opacity-70 transition-opacity duration-200"
                 >
-                  <img src={logoUrl} alt="Gissler Webdesign Logo" className="h-6 w-auto" />
+                  <img src={logoUrl} alt="Gissler Webdesign Logo" className="h-9 w-auto" />
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
