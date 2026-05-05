@@ -43,7 +43,7 @@ export function About() {
             style={{ color: "rgba(180, 210, 230, 0.6)" }}
           >
             Aktuell studiere ich Medienkonzeption an der Hochschule Furtwangen
-            mit Fokus auf Webdesign und Nutzererfahrung. Nebenbei arbeite ich ich als Softwaredesigner bei M&M Software. <br />Mein Fachwissen aus Studium und Beruf bringe ich direkt in den Projekt ein.
+            mit Fokus auf Webdesign und Nutzererfahrung. Nebenbei arbeite ich ich als Softwaredesigner bei M&M Software. <br />Mein Fachwissen aus Studium und Beruf bringe ich direkt in dein Projekt ein.
           </p>
         </FadeIn>
 
