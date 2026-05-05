@@ -11,7 +11,7 @@ export function Datenschutz() {
           Datenschutzerklärung
         </h1>
         <p className="mt-4 text-slate-400 text-[14px]">
-          Stand: April 2026
+          Stand: Mai 2026
         </p>
       </FadeIn>
 
@@ -32,6 +32,10 @@ export function Datenschutz() {
               <br />
               E-Mail: gissler.jonas@gmail.com
             </div>
+            <p className="text-slate-400 text-[13px] leading-relaxed mt-3">
+              Ein Datenschutzbeauftragter ist nicht bestellt, da die gesetzlichen
+              Voraussetzungen hierfür nicht vorliegen.
+            </p>
           </Card>
         </FadeIn>
 
@@ -57,7 +61,12 @@ export function Datenschutz() {
               3. SSL- bzw. TLS-Verschlüsselung
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
-              Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Anfragen, die du an mich als Seitenbetreiber sendest, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in deiner Browserzeile. Wenn die Verschlüsselung aktiviert ist, können die Daten, die du an mich übermittelst, nicht von Dritten mitgelesen werden.
+              Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung
+              vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine
+              verschlüsselte Verbindung erkennst du daran, dass die Adresszeile des
+              Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol
+              in deiner Browserzeile. Wenn die Verschlüsselung aktiviert ist, können
+              die Daten, die du an mich übermittelst, nicht von Dritten mitgelesen werden.
             </p>
           </Card>
         </FadeIn>
@@ -96,12 +105,17 @@ export function Datenschutz() {
         <FadeIn delay={0.3}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              6. Cookies
+              6. Cookies &amp; Tracking
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
-              Diese Website verwendet ausschließlich technisch notwendige
-              Cookies, die für den Betrieb der Seite erforderlich sind. Es
-              werden keine Tracking- oder Marketing-Cookies eingesetzt.
+              Diese Website verwendet technisch notwendige Cookies, die für den
+              Betrieb der Seite erforderlich sind. Darüber hinaus setze ich mit
+              deiner ausdrücklichen Einwilligung{" "}
+              <strong className="text-slate-200">Google Analytics</strong> ein,
+              das Analyse-Cookies verwendet, um die Nutzung der Website anonymisiert
+              auszuwerten. Du kannst deine Einwilligung jederzeit über den
+              Cookie-Banner widerrufen. Ohne deine Einwilligung werden keine
+              Analyse-Cookies gesetzt.
             </p>
           </Card>
         </FadeIn>
@@ -109,15 +123,41 @@ export function Datenschutz() {
         <FadeIn delay={0.35}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              7. Deine Rechte
+              7. Google Analytics
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
-              Du hast jederzeit das Recht auf Auskunft, Berichtigung,
-              Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit
-              sowie Widerspruch gegen die Verarbeitung deiner Daten. Wende
-              dich dafür einfach per E-Mail an mich. Zudem steht dir ein
-              Beschwerderecht bei der zuständigen Aufsichtsbehörde
-              (Landesbeauftragter für den Datenschutz Baden-Württemberg) zu.
+              Mit deiner Einwilligung nutze ich{" "}
+              <strong className="text-slate-200">Google Analytics</strong> (Google
+              LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Dabei
+              werden Nutzungsdaten (u. a. IP-Adresse in gekürzter Form, besuchte
+              Seiten, Verweildauer) an Server von Google übertragen. Die
+              IP-Anonymisierung ist aktiviert, sodass deine IP-Adresse vor der
+              Übermittlung gekürzt wird. Google ist unter dem EU-US Data Privacy
+              Framework zertifiziert, sodass ein angemessenes Datenschutzniveau
+              gewährleistet ist.
+            </p>
+            <p className="text-slate-300 text-[14px] leading-relaxed mt-3">
+              Du kannst die Erfassung durch Google Analytics jederzeit ablehnen oder
+              eine bereits erteilte Einwilligung widerrufen, indem du im
+              Cookie-Banner auf „Ablehnen" klickst oder das{" "}
+              <a
+                href="https://tools.google.com/dlpage/gaoptout"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 underline hover:text-sky-300 transition-colors"
+              >
+                Browser-Add-on zur Deaktivierung von Google Analytics
+              </a>{" "}
+              installierst. Weitere Informationen:{" "}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 underline hover:text-sky-300 transition-colors"
+              >
+                Datenschutzerklärung von Google
+              </a>
+              . Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).
             </p>
           </Card>
         </FadeIn>
@@ -125,7 +165,34 @@ export function Datenschutz() {
         <FadeIn delay={0.4}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              8. Hosting – GitHub Pages
+              8. Deine Rechte
+            </div>
+            <p className="text-slate-300 text-[14px] leading-relaxed">
+              Du hast jederzeit das Recht auf Auskunft, Berichtigung,
+              Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit
+              sowie Widerspruch gegen die Verarbeitung deiner Daten. Wende
+              dich dafür einfach per E-Mail an mich.
+            </p>
+            <p className="text-slate-300 text-[14px] leading-relaxed mt-3">
+              <strong className="text-slate-200">Widerrufsrecht:</strong> Soweit
+              die Datenverarbeitung auf deiner Einwilligung beruht (z. B.
+              Google Analytics), kannst du diese jederzeit mit Wirkung für die
+              Zukunft widerrufen – ohne dass die Rechtmäßigkeit der bis dahin
+              erfolgten Verarbeitung berührt wird.
+            </p>
+            <p className="text-slate-300 text-[14px] leading-relaxed mt-3">
+              <strong className="text-slate-200">Beschwerderecht:</strong> Dir
+              steht das Recht zur Beschwerde bei der zuständigen
+              Aufsichtsbehörde zu: Landesbeauftragter für den Datenschutz
+              Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart.
+            </p>
+          </Card>
+        </FadeIn>
+
+        <FadeIn delay={0.45}>
+          <Card>
+            <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
+              9. Hosting – GitHub Pages
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
               Diese Website wird über <strong className="text-slate-200">GitHub Pages</strong> gehostet,
@@ -148,10 +215,10 @@ export function Datenschutz() {
           </Card>
         </FadeIn>
 
-        <FadeIn delay={0.45}>
+        <FadeIn delay={0.5}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              9. Kontaktformular – EmailJS
+              10. Kontaktformular – EmailJS
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
               Das Kontaktformular dieser Website nutzt den Dienst{" "}
@@ -175,10 +242,10 @@ export function Datenschutz() {
           </Card>
         </FadeIn>
 
-        <FadeIn delay={0.5}>
+        <FadeIn delay={0.55}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
-              10. Speicherdauer
+              11. Speicherdauer
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
               Personenbezogene Daten werden nur so lange gespeichert, wie es

@@ -91,6 +91,30 @@ export function Impressum() {
         <FadeIn delay={0.3}>
           <Card>
             <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
+              Streitbeilegung
+            </div>
+            <p className="text-slate-300 text-[14px] leading-relaxed">
+              Die Europäische Kommission stellt eine Plattform zur
+              Online-Streitbeilegung (OS) bereit:{" "}
+              <a
+                href="https://ec.europa.eu/consumers/odr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 underline hover:text-sky-300 transition-colors"
+              >
+                https://ec.europa.eu/consumers/odr/
+              </a>
+              .<br />
+              Ich bin nicht bereit oder verpflichtet, an
+              Streitbeilegungsverfahren vor einer
+              Verbraucherschlichtungsstelle teilzunehmen.
+            </p>
+          </Card>
+        </FadeIn>
+
+        <FadeIn delay={0.35}>
+          <Card>
+            <div className="text-sky-400 text-[12px] tracking-[0.25em] uppercase mb-4">
               Haftungsausschluss
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">

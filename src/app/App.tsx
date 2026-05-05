@@ -11,6 +11,7 @@ import { About } from "./components/pages/About";
 import { Impressum } from "./components/pages/Impressum";
 import { Datenschutz } from "./components/pages/Datenschutz";
 import { Kontakt } from "./components/pages/Kontakt";
+import { CookieBanner } from "./components/CookieBanner";
 
 export default function App() {
   const location = useLocation();
@@ -80,6 +81,7 @@ export default function App() {
       </AnimatePresence>
 
       <Footer />
+      <CookieBanner />
     </div>
   );
 }
