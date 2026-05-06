@@ -1,5 +1,6 @@
 import { Linkedin, Mail, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import logoUrl from "../../imports/Logo-Gissler-webdesign.svg";
 
 const EMAIL_ADDRESS = "gissler.jonas@gmail.com";
 
@@ -17,16 +18,23 @@ export function Footer() {
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 py-12 sm:py-16 2xl:py-20">
         <div className="grid gap-10 sm:gap-12 2xl:gap-16 sm:grid-cols-2 md:grid-cols-4">
           <div>
-            <div
-              className="text-[18px] sm:text-[20px] 2xl:text-[22px] font-semibold"
-              style={{
-                background: "linear-gradient(135deg, #4dbef3, #006999)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Gissler Webdesign
+            <div className="flex items-center gap-2.5 mb-0.5">
+              <img
+                src={logoUrl}
+                alt="Gissler Webdesign Logo"
+                className="h-8 2xl:h-9 w-auto opacity-80"
+              />
+              <div
+                className="text-[18px] sm:text-[20px] 2xl:text-[22px] font-semibold"
+                style={{
+                  background: "linear-gradient(135deg, #4dbef3, #006999)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Gissler Webdesign
+              </div>
             </div>
             <p
               className="mt-3 text-[14px] 2xl:text-[16px] leading-relaxed"

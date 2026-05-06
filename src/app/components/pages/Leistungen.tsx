@@ -200,16 +200,16 @@ export function Leistungen() {
         </FadeIn>
 
         <div className="relative">
-          {/* Vertical connecting line */}
-          <div className="absolute left-6 top-6 bottom-6 w-px bg-sky-400/15" />
-
           <div className="space-y-0">
             {timelineSteps.map(({ icon: Icon, step, title, desc, tag }, i) => (
               <FadeIn key={step} delay={i * 0.07}>
                 <div className="relative flex gap-8 sm:gap-14 2xl:gap-20 pb-32 sm:pb-48 2xl:pb-56 last:pb-0">
                   {/* Circle */}
                   <div className="relative z-10 shrink-0 flex flex-col items-center">
-                    <div className="h-12 w-12 2xl:h-16 2xl:w-16 rounded-full bg-[#0f2440] border border-sky-400/40 flex items-center justify-center">
+                    {i < timelineSteps.length - 1 && (
+                      <div className="absolute top-0 bottom-0 left-1/2 w-px -translate-x-1/2 bg-sky-400/15" />
+                    )}
+                    <div className="relative h-12 w-12 2xl:h-16 2xl:w-16 rounded-full bg-[#0f2440] border border-sky-400/40 flex items-center justify-center">
                       <Icon size={20} className="text-sky-400 2xl:!h-6 2xl:!w-6" />
                     </div>
                   </div>
