@@ -1,17 +1,18 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { SectionLabel } from "../SectionLabel";
-import { PrimaryButton, GhostButton } from "../Button";
+import { PrimaryButton, GhostButton, TertiaryButton } from "../Button";
 import { Card } from "../Card";
 import { FadeIn } from "../FadeIn";
 import { PortfolioSlider } from "../PortfolioSlider";
 import { Aurora } from "../Aurora";
 import { useNavigate } from "react-router-dom";
-import { Palette, Code2, Rocket, ExternalLink, Phone } from "lucide-react";
+import { Palette, Code2, Rocket, Phone } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import profilbild from "../../../imports/Profilbild.jpg";
 import { DesignerSVG } from "../DesignerSVG";
 import gcnImg from "../../../imports/gcn-fahrzeughandel.png";
+import gcnAvatar from "../../../imports/gcn-avatar.jpeg";
 
 const PROJECTS = [
   {
@@ -21,13 +22,22 @@ const PROJECTS = [
     desc: "Vollständige Web-Plattform für einen Fahrzeughändler – Außendarstellung, Fahrzeugsuche, Verkaufsauftragsformulare mit automatischer E-Mail-Benachrichtigung und internes Kundenverwaltungs-Dashboard.",
     url: "https://gcn-fahrzeughandel.de/",
     features: ["React", "Dashboard", "Fahrzeugsuche", "E-Mail-System", "Deployment"],
+    testimonial: {
+      show: true, // ← false = Testimonial ausblenden
+      quote: "Die Zusammenarbeit war von Anfang bis Ende reibungslos. Jonas hat unsere Vorstellungen genau verstanden und eine Website gebaut, die wirklich zu uns passt. Außerdem erleichtert unser neues Admin-Panel die Verwaltung unserer Kunden erheblich.",
+      name: "Giosue Canobbio",
+      role: "Geschäftsführer",
+      company: "GCN-Fahrzeughandel",
+      avatar: gcnAvatar,
+    },
   },
   {
     image: null,
-    tag: "Demnächst verfügbar",
-    title: "Nächstes Projekt",
-    desc: "Mein nächstes Projekt ist gerade in Umsetzung. Melde dich gerne, wenn du Interesse an einer Zusammenarbeit hast.",
-    comingSoon: true,
+    tag: "Weitere Projekte",
+    title: "Persönliches Portfolio",
+    desc: "Hier sind nur ausgewählte Projekte zu sehen. Auf meiner Portfolio-Seite findest du alle Arbeiten – von Webdesign bis zur vollständigen Web-Plattform.",
+    url: "/portfolio",
+    urlLabel: "Alle Projekte",
   },
 ];
 
@@ -124,25 +134,13 @@ function PortfolioPreview() {
       </FadeIn>
 
       <FadeIn delay={0.2}>
-        <div className="mt-10 flex flex-wrap items-center gap-5">
+        <div className="mt-10 flex items-center gap-5 sm:gap-7">
           <GhostButton onClick={() => navigate("/portfolio")}>
-            Alle Projekte ansehen
+            Alle Projekte
           </GhostButton>
-          <a
-            href="https://gissler-webdesign/portfolio.de"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 font-medium transition-colors duration-200"
-            style={{ color: "rgba(150, 190, 220, 0.55)" }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.color = "rgba(200, 235, 255, 0.85)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.color = "rgba(150, 190, 220, 0.55)";
-            }}
-          >
-            Persönliches Portfolio <ExternalLink size={16} />
-          </a>
+          <TertiaryButton href="/portfolio">
+            Persönliches Portfolio
+          </TertiaryButton>
         </div>
       </FadeIn>
     </section>

@@ -19,9 +19,9 @@ export function Card({
     const rect = el.getBoundingClientRect();
     const mx = e.clientX - rect.left;
     const my = e.clientY - rect.top;
-    el.style.background = `radial-gradient(280px circle at ${mx}px ${my}px, rgba(77,190,243,0.7), rgba(77,190,243,0.08) 60%)`;
+    el.style.background = `radial-gradient(520px circle at ${mx}px ${my}px, rgba(77,190,243,0.55), rgba(77,190,243,0.06) 70%)`;
     if (spotRef.current) {
-      spotRef.current.style.background = `radial-gradient(380px circle at ${mx}px ${my}px, rgba(77,190,243,0.06), transparent 55%)`;
+      spotRef.current.style.background = `radial-gradient(600px circle at ${mx}px ${my}px, rgba(77,190,243,0.07), transparent 70%)`;
       spotRef.current.style.opacity = "1";
     }
   }

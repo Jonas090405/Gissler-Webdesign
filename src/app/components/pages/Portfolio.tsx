@@ -3,6 +3,7 @@ import { FadeIn } from "../FadeIn";
 import { PortfolioSlider } from "../PortfolioSlider";
 import { ExternalLink } from "lucide-react";
 import gcnImg from "../../../imports/gcn-fahrzeughandel.png";
+import gcnAvatar from "../../../imports/gcn-avatar.jpeg";
 
 const PROJECTS = [
   {
@@ -11,13 +12,20 @@ const PROJECTS = [
     title: "GCN-Fahrzeughandel",
     desc: "Vollständige Web-Plattform für einen Fahrzeughändler. Außendarstellung, Fahrzeugsuche, Verkaufsauftragsformulare mit automatischer E-Mail-Benachrichtigung und internes Kundenverwaltungs-Dashboard.",
     url: "https://gcn-fahrzeughandel.de/",
+    testimonial: {
+      show: true, // ← false = Testimonial ausblenden
+      quote: "Die Zusammenarbeit war von Anfang bis Ende reibungslos. Jonas hat unsere Vorstellungen genau verstanden und eine Website gebaut, die wirklich zu uns passt. Wir bekommen regelmäßig positives Feedback von unseren Kunden.",
+      name: "Name Nachname",
+      role: "Geschäftsführer",
+      company: "GCN-Fahrzeughandel",
+      avatar: gcnAvatar,
+    },
   },
   {
     image: null,
-    tag: "Demnächst verfügbar",
+    tag: "In Umsetzung",
     title: "Nächstes Projekt",
-    desc: "Mein nächstes Projekt ist gerade in Umsetzung.",
-    comingSoon: true,
+    desc: "Mein nächstes Projekt ist gerade in Arbeit. Melde dich gerne, wenn du Interesse an einer Zusammenarbeit hast.",
   },
 ];
 

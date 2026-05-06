@@ -40,7 +40,7 @@ export function PrimaryButton({
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100"
         style={{
           background:
-            "radial-gradient(140px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.25), transparent 55%)",
+            "radial-gradient(220px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.2), transparent 70%)",
         }}
       />
       {/* Sweep-Shine */}
@@ -59,6 +59,60 @@ export function PrimaryButton({
   );
 }
 
+export function TertiaryButton({
+  children,
+  onClick,
+  href,
+  external = false,
+}: {
+  children: React.ReactNode;
+  onClick?: () => void;
+  href?: string;
+  external?: boolean;
+}) {
+  const cls =
+    "group/btn inline-flex cursor-pointer items-center gap-1.5 text-[14px] xl:text-[15px] 2xl:text-[16px] font-medium transition-colors duration-200 whitespace-nowrap";
+  const color = "rgba(125, 211, 252, 0.85)";
+  const colorHover = "rgba(186, 230, 253, 1)";
+  const icon = (
+    <ArrowUpRight
+      size={14}
+      className="xl:!h-4 xl:!w-4 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
+      aria-hidden
+    />
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={external ? "_blank" : "_self"}
+        rel={external ? "noreferrer" : undefined}
+        className={cls}
+        style={{ color }}
+        onMouseEnter={(e) => { e.currentTarget.style.color = colorHover; }}
+        onMouseLeave={(e) => { e.currentTarget.style.color = color; }}
+      >
+        {children}
+        {icon}
+      </a>
+    );
+  }
+
+  return (
+    <button
+      onClick={onClick}
+      className={cls}
+      style={{ color }}
+      onMouseEnter={(e) => { e.currentTarget.style.color = colorHover; }}
+      onMouseLeave={(e) => { e.currentTarget.style.color = color; }}
+    >
+      {children}
+      {icon}
+    </button>
+  );
+}
+
 export function GhostButton({
   children,
   onClick,
@@ -69,7 +123,7 @@ export function GhostButton({
   return (
     <button
       onClick={onClick}
-      className="group/btn inline-flex cursor-pointer items-center gap-2 rounded-full px-6 py-3 xl:px-7 xl:py-3.5 2xl:px-9 2xl:py-4 text-[15px] 2xl:text-[17px] font-medium transition-all duration-300"
+      className="group/btn inline-flex cursor-pointer items-center gap-2 rounded-full px-6 py-3 xl:px-7 xl:py-3.5 2xl:px-9 2xl:py-4 text-[15px] 2xl:text-[17px] font-medium transition-all duration-300 whitespace-nowrap"
       style={{
         background: "rgba(77, 190, 243, 0.07)",
         border: "1px solid rgba(77, 190, 243, 0.2)",
