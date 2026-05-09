@@ -138,7 +138,7 @@ function PortfolioPreview() {
           <GhostButton onClick={() => navigate("/portfolio")}>
             Alle Projekte
           </GhostButton>
-          <TertiaryButton href="/portfolio">
+          <TertiaryButton href="https://portfolio.gissler-webdesign.de" external={true}>
             Persönliches Portfolio
           </TertiaryButton>
         </div>
