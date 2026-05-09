@@ -370,9 +370,9 @@ function Contact() {
         EMAILJS_SERVICE_ID,
         EMAILJS_AUTOREPLY_TEMPLATE_ID,
         {
-          to_name: formData.name,
-          to_email: formData.email,
-          original_message: formData.message,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
         },
         EMAILJS_PUBLIC_KEY,
       ).catch(() => {});
