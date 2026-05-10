@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { initGA } from "../../lib/analytics";
+import { grantConsent, denyConsent } from "../../lib/analytics";
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
@@ -10,19 +10,20 @@ export function CookieBanner() {
     if (!consent) {
       setVisible(true);
     } else if (consent === "granted") {
-      initGA();
+      grantConsent();
     }
   }, []);
 
   function accept() {
     localStorage.setItem("cookie-consent", "granted");
     setVisible(false);
-    initGA();
+    grantConsent();
   }
 
   function decline() {
     localStorage.setItem("cookie-consent", "denied");
     setVisible(false);
+    denyConsent();
   }
 
   return (
