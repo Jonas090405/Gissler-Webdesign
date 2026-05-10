@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { motion, AnimatePresence } from "motion/react";
 import { SectionLabel } from "../SectionLabel";
 import { PrimaryButton, GhostButton, TertiaryButton } from "../Button";
@@ -42,6 +43,11 @@ const PROJECTS = [
 ];
 
 export function Home() {
+  usePageMeta({
+    title: "Gissler Webdesign | Moderne Webseiten für lokale Unternehmen",
+    description: "Professionelles Webdesign für lokale Unternehmen. Von der ersten Idee bis zur fertigen Website – individuelles Design, schnelle Ladezeiten, inkl. Hosting & SEO.",
+    path: "/",
+  });
   return (
     <main className="mx-auto max-w-7xl 2xl:max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-24">
       <Hero />

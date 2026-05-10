@@ -1,3 +1,4 @@
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { motion } from "motion/react";
 import { SectionLabel } from "../SectionLabel";
 import { Card } from "../Card";
@@ -8,6 +9,11 @@ import profilbild from "../../../imports/Profilbild.jpg";
 import { Zap, Layers, UserCheck, type LucideIcon } from "lucide-react";
 
 export function About() {
+  usePageMeta({
+    title: "Über mich | Gissler Webdesign",
+    description: "Ich bin Jonas Gissler – Webdesigner und Entwickler aus Triberg im Schwarzwald. Ich kümmere mich komplett um deine Website: Design, Technik, Hosting und alles, was dazugehört.",
+    path: "/ueber-mich",
+  });
   const navigate = useNavigate();
   return (
     <main className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-36 sm:pt-44 lg:pt-52 xl:pt-60 2xl:pt-72 pb-12 xl:pb-20 2xl:pb-28">

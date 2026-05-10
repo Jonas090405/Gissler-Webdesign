@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { motion, AnimatePresence } from "motion/react";
 import { SectionLabel } from "../SectionLabel";
 import { PrimaryButton } from "../Button";
@@ -64,6 +65,11 @@ const slideVariants = {
 };
 
 export function Kontakt() {
+  usePageMeta({
+    title: "Kontakt | Gissler Webdesign",
+    description: "Starte dein Webprojekt. Schreib mir oder ruf mich direkt an – das Erstgespräch ist kostenlos und unverbindlich.",
+    path: "/kontakt",
+  });
   const [mode, setMode] = useState<ContactMode>("form");
   const [direction, setDirection] = useState(0);
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");

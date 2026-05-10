@@ -1,3 +1,4 @@
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { SectionLabel } from "../SectionLabel";
 import { FadeIn } from "../FadeIn";
 import { PortfolioSlider } from "../PortfolioSlider";
@@ -30,6 +31,11 @@ const PROJECTS = [
 ];
 
 export function Portfolio() {
+  usePageMeta({
+    title: "Portfolio | Gissler Webdesign",
+    description: "Ausgewählte Webdesign-Projekte von Jonas Gissler. Moderne Websites für lokale Unternehmen aus dem Schwarzwald.",
+    path: "/portfolio",
+  });
   return (
     <main className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-36 sm:pt-44 lg:pt-52 xl:pt-60 2xl:pt-72 pb-12 xl:pb-20 2xl:pb-28">
       <FadeIn>
