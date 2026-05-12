@@ -6,6 +6,7 @@ import { PrimaryButton } from "../Button";
 import { Card } from "../Card";
 import { FadeIn } from "../FadeIn";
 import { Mail, MapPin, Clock, CheckCircle2, Phone } from "lucide-react";
+import berkantImg from "../../../imports/Berkant_agyar.jpeg";
 import emailjs from "@emailjs/browser";
 
 // ─── EmailJS-Konfiguration ────────────────────────────────────────────────────
@@ -15,8 +16,8 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
 const EMAILJS_AUTOREPLY_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID as string;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
-const EMAIL_ADDRESS = "Jonas@gissler-webdesign.de";
-const PHONE_NUMBER = "+49 151 2079 7408";
+const BERKANT_EMAIL = "Berkant@gissler-webdesign.de";
+const BERKANT_PHONE = "+49 176 3464 9177";
 // Empfänger direkt im EmailJS-Template-Dashboard einstellen (To Email-Feld)
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -67,7 +68,7 @@ const slideVariants = {
 export function Kontakt() {
   usePageMeta({
     title: "Kontakt | Gissler Webdesign",
-    description: "Starte dein Webprojekt. Schreib mir oder ruf mich direkt an – das Erstgespräch ist kostenlos und unverbindlich.",
+    description: "Starte dein Webprojekt. Schreib uns oder ruf uns direkt an – das Erstgespräch ist kostenlos und unverbindlich.",
     path: "/kontakt",
   });
   const [mode, setMode] = useState<ContactMode>("form");
@@ -125,8 +126,8 @@ export function Kontakt() {
     <main className="mx-auto max-w-5xl xl:max-w-6xl 2xl:max-w-7xl px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-36 sm:pt-44 lg:pt-52 xl:pt-60 2xl:pt-72 pb-24 2xl:pb-32">
       <FadeIn>
         <SectionLabel>Kontakt</SectionLabel>
-        <h1 className="text-white text-[clamp(32px,6vw,76px)] leading-[1.05] tracking-tight max-w-2xl 2xl:max-w-3xl mb-5">
-          Erzähl mir von{" "}
+        <h1 className="text-white text-[clamp(32px,6vw,76px)] leading-[1.05] tracking-tight max-w-2xl 2xl:max-w-3xl mb-4">
+          Erzähl uns von{" "}
           <span
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: "linear-gradient(135deg, #4dbef3 0%, #006999 100%)" }}
@@ -134,8 +135,23 @@ export function Kontakt() {
             deinem Projekt.
           </span>
         </h1>
+
+        {/* Ansprechpartner */}
+        <div className="flex items-center gap-3 mb-6 2xl:mb-8">
+          <div
+            className="shrink-0 h-9 w-9 rounded-full overflow-hidden"
+            style={{ border: "1.5px solid rgba(77,190,243,0.4)" }}
+          >
+            <img src={berkantImg} alt="Berkant Agyar" className="h-full w-full object-cover object-top" />
+          </div>
+          <div>
+            <div className="text-[11px]" style={{ color: "rgba(150,190,220,0.5)" }}>Dein Ansprechpartner</div>
+            <div className="text-[13px] text-white font-medium leading-tight">Berkant Agyar</div>
+          </div>
+        </div>
+
         <p className="text-slate-400 text-[15px] sm:text-[16px] 2xl:text-[18px] leading-relaxed max-w-xl 2xl:max-w-2xl mb-14 2xl:mb-20">
-          Ich melde mich innerhalb von 24 Stunden
+          Wir melden uns innerhalb von 24 Stunden
           mit einer ersten Einschätzung und einem unverbindlichen Termin.
         </p>
       </FadeIn>
@@ -146,14 +162,14 @@ export function Kontakt() {
           <InfoItem
             Icon={Mail}
             label="E-Mail"
-            value="Jonas@gissler-webdesign.de"
-            href="mailto:Jonas@gissler-webdesign.de"
+            value={BERKANT_EMAIL}
+            href={`mailto:${BERKANT_EMAIL}`}
           />
           <InfoItem
             Icon={Phone}
             label="Telefon"
-            value={PHONE_NUMBER}
-            href={`tel:${PHONE_NUMBER.replace(/[\s\-\(\)]/g, "")}`}
+            value={BERKANT_PHONE}
+            href={`tel:${BERKANT_PHONE.replace(/[\s]/g, "")}`}
           />
           <InfoItem Icon={MapPin} label="Standort" value="Triberg, Schwarzwald" />
           <InfoItem Icon={Clock} label="Antwortzeit" value="In der Regel innerhalb von 24 Stunden" />
@@ -189,7 +205,7 @@ export function Kontakt() {
                 transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               >
                 {mode === "call" ? (
-                  <CallCard phone={PHONE_NUMBER} />
+                  <CallCard phone={BERKANT_PHONE} />
                 ) : (
                   <Card>
                     {status === "sent" ? (
@@ -236,12 +252,12 @@ export function Kontakt() {
                         {status === "error" && (
                           <p className="text-red-400 text-[13px] leading-relaxed">
                             Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut
-                            oder schreib mir direkt an{" "}
+                            oder schreib uns direkt an{" "}
                             <a
-                              href="mailto:Jonas@gissler-webdesign.de"
+                              href={`mailto:${BERKANT_EMAIL}`}
                               className="underline hover:text-red-300 transition-colors"
                             >
-                              Jonas@gissler-webdesign.de
+                              {BERKANT_EMAIL}
                             </a>
                             .
                           </p>
@@ -309,7 +325,7 @@ function CallCard({ phone }: { phone: string }) {
           <Phone size={32} style={{ color: "#4dbef3" }} />
         </div>
         <div>
-          <p className="text-slate-400 text-[14px] mb-2">Ruf mich einfach direkt an:</p>
+          <p className="text-slate-400 text-[14px] mb-2">Ruf uns einfach direkt an:</p>
           <a
             href={`tel:${phone.replace(/[\s\-\(\)]/g, "")}`}
             className="text-white text-[28px] sm:text-[34px] font-semibold tracking-tight hover:text-sky-300 transition-colors"
@@ -318,7 +334,7 @@ function CallCard({ phone }: { phone: string }) {
           </a>
         </div>
         <p className="text-slate-500 text-[13px] max-w-xs leading-relaxed">
-          Falls du mich nicht erreichen solltest, hinterlasse eine Nachricht mit deinem Namen und deiner Telefonnummer. Ich melde mich schnellstmöglich zurück.
+          Falls wir nicht erreichbar sind, hinterlasse eine Nachricht mit deinem Namen und deiner Telefonnummer. Wir melden uns schnellstmöglich zurück.
         </p>
         <a
           href={`tel:${phone.replace(/[\s\-\(\)]/g, "")}`}
@@ -340,7 +356,7 @@ function SuccessState() {
       <div className="text-sky-400 text-[11px] tracking-[0.25em] uppercase">Gesendet</div>
       <h3 className="text-white text-[22px]">Danke für deine Nachricht!</h3>
       <p className="text-slate-400 text-[14px] max-w-sm leading-relaxed">
-        Ich habe deine Anfrage erhalten und melde mich so schnell wie möglich bei dir.
+        Wir haben deine Anfrage erhalten und melden uns so schnell wie möglich bei dir.
       </p>
     </div>
   );

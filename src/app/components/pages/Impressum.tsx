@@ -45,6 +45,9 @@ export function Impressum() {
               <br />
               Gewerbliche Tätigkeit: Webdesign und Webentwicklung
             </div>
+            <p className="text-slate-400 text-[13px] leading-relaxed mt-3">
+              Berkant Agyar ist selbstständiger externer Partner für Kundenkommunikation und Projektmanagement und nicht Mitinhaber des Unternehmens.
+            </p>
           </Card>
         </FadeIn>
 
@@ -70,6 +73,10 @@ export function Impressum() {
               {/* TODO: Steuernummer eintragen */}
               Steuernummer: wird nachgereicht
             </div>
+            <p className="text-slate-400 text-[13px] leading-relaxed mt-3">
+              Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).
+              Eine Umsatzsteuer-Identifikationsnummer liegt daher nicht vor.
+            </p>
           </Card>
         </FadeIn>
 
@@ -105,7 +112,7 @@ export function Impressum() {
                 https://ec.europa.eu/consumers/odr/
               </a>
               .<br />
-              Ich bin nicht bereit oder verpflichtet, an
+              Wir sind nicht bereit oder verpflichtet, an
               Streitbeilegungsverfahren vor einer
               Verbraucherschlichtungsstelle teilzunehmen.
             </p>
@@ -121,7 +128,7 @@ export function Impressum() {
               Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt
               erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität
               der Inhalte kann jedoch keine Gewähr übernommen werden. Für
-              Inhalte externer Links übernehme ich keine Haftung; für deren
+              Inhalte externer Links wird keine Haftung übernommen; für deren
               Inhalt sind ausschließlich die jeweiligen Betreiber
               verantwortlich.
             </p>

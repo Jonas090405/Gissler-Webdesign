@@ -6,80 +6,92 @@ import { PrimaryButton } from "../Button";
 import { FadeIn } from "../FadeIn";
 import { useNavigate } from "react-router-dom";
 import profilbild from "../../../imports/Profilbild.jpg";
-import { Zap, Layers, UserCheck, type LucideIcon } from "lucide-react";
+import berkantImg from "../../../imports/Berkant_agyar.jpeg";
+import { Zap, Layers, Users, Linkedin, type LucideIcon } from "lucide-react";
 
 export function About() {
   usePageMeta({
-    title: "Über mich | Gissler Webdesign",
-    description: "Ich bin Jonas Gissler – Webdesigner und Entwickler aus Triberg im Schwarzwald. Ich kümmere mich komplett um deine Website: Design, Technik, Hosting und alles, was dazugehört.",
+    title: "Über uns | Gissler Webdesign",
+    description: "Wir sind Jonas Gissler (Design & Entwicklung) und Berkant Agyar (Kundenkommunikation & Projektmanagement) – ein eingespieltes Team für moderne Webseiten aus dem Schwarzwald.",
     path: "/ueber-mich",
   });
   const navigate = useNavigate();
   return (
     <main className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-36 sm:pt-44 lg:pt-52 xl:pt-60 2xl:pt-72 pb-12 xl:pb-20 2xl:pb-28">
       <FadeIn>
-        <SectionLabel>Über mich</SectionLabel>
+        <SectionLabel>Über uns</SectionLabel>
       </FadeIn>
 
-      {/* Hero with profile picture */}
+      {/* ── Jonas ── */}
       <div className="mt-4 grid gap-10 md:gap-16 2xl:gap-24 md:grid-cols-5 items-center">
         <FadeIn className="md:col-span-3">
           <h1 className="text-white text-[clamp(36px,6vw,80px)] tracking-tight leading-[1.05]">
             Hi, ich bin{" "}
             <span
               className="bg-clip-text text-transparent"
-              style={{
-                backgroundImage:
-                  "linear-gradient(135deg, #4dbef3 0%, #006999 100%)",
-              }}
+              style={{ backgroundImage: "linear-gradient(135deg, #4dbef3 0%, #006999 100%)" }}
             >
               Jonas.
             </span>
           </h1>
           <p
-            className="mt-6 text-[16px] sm:text-[17px] xl:text-[19px] 2xl:text-[21px] leading-relaxed"
+            className="mt-2 text-[12px] sm:text-[13px] tracking-[0.2em] uppercase"
+            style={{ color: "#4dbef3" }}
+          >
+            Design & Entwicklung
+          </p>
+          <p
+            className="mt-7 text-[16px] sm:text-[17px] xl:text-[19px] 2xl:text-[21px] leading-relaxed"
             style={{ color: "rgba(200, 225, 240, 0.8)" }}
           >
             Ich bin 21 Jahre alt und komme aus Triberg im Schwarzwald.
-            Ich designe und entwickle Websites für lokale Unternehmen.
-            Von der ersten Idee bis sie live sind.
+            Ich designe und entwickle Websites für lokale Unternehmen –
+            von der ersten Idee bis sie live sind.
           </p>
           <p
             className="mt-4 text-[15px] xl:text-[17px] 2xl:text-[18px] leading-relaxed"
             style={{ color: "rgba(180, 210, 230, 0.6)" }}
           >
             Aktuell studiere ich Medienkonzeption an der Hochschule Furtwangen
-            mit Fokus auf Webdesign und Nutzererfahrung. Nebenbei arbeite ich ich als zertifizierter Softwaredesigner bei M&M Software. <br />Mein Fachwissen aus Studium und Beruf bringe ich direkt in dein Projekt ein.
+            mit Fokus auf Webdesign und Nutzererfahrung. Nebenbei arbeite ich als zertifizierter
+            Softwaredesigner bei M&amp;M Software.{" "}
+            Mein Fachwissen aus Studium und Beruf bringe ich direkt in euer Projekt ein.
           </p>
+          <a
+            href="https://www.linkedin.com/in/jonas-gissler-37b1482b0/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2.5 text-[14px] xl:text-[15px] font-medium transition-colors duration-200"
+            style={{ color: "rgba(150, 190, 220, 0.6)" }}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#4dbef3")}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(150, 190, 220, 0.6)")}
+          >
+            <Linkedin size={16} />
+            LinkedIn
+          </a>
         </FadeIn>
 
         <FadeIn delay={0.15} className="md:col-span-2 flex justify-center md:justify-end">
           <div className="group relative">
-            {/* Outer decorative ring */}
             <div
               className="absolute inset-0 rounded-full scale-[1.10]"
               style={{ border: "1px solid rgba(77, 190, 243, 0.15)" }}
             />
-            {/* Inner decorative ring */}
             <div
               className="absolute inset-0 rounded-full scale-[1.04]"
               style={{ border: "1px solid rgba(77, 190, 243, 0.08)" }}
             />
-            {/* Rotierender Akzent-Ring */}
             <motion.div
               aria-hidden
               className="absolute inset-0 rounded-full scale-[1.18] pointer-events-none"
               style={{
-                background:
-                  "conic-gradient(from 0deg, transparent 0deg, rgba(77,190,243,0.50) 80deg, transparent 160deg, transparent 360deg)",
-                WebkitMask:
-                  "radial-gradient(circle, transparent 49%, #000 50%, #000 51%, transparent 52%)",
+                background: "conic-gradient(from 0deg, transparent 0deg, rgba(77,190,243,0.50) 80deg, transparent 160deg, transparent 360deg)",
+                WebkitMask: "radial-gradient(circle, transparent 49%, #000 50%, #000 51%, transparent 52%)",
                 mask: "radial-gradient(circle, transparent 49%, #000 50%, #000 51%, transparent 52%)",
               }}
               animate={{ rotate: 360 }}
               transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
             />
-            {/* Profile image circle */}
             <div
               className="relative h-60 w-60 sm:h-72 sm:w-72 xl:h-80 xl:w-80 2xl:h-96 2xl:w-96 rounded-full overflow-hidden transition-transform duration-500 ease-out group-hover:scale-[1.02]"
               style={{ border: "2px solid rgba(77, 190, 243, 0.45)" }}
@@ -94,50 +106,28 @@ export function About() {
         </FadeIn>
       </div>
 
-      {/* Info cards */}
+      {/* Jonas info cards */}
       <div className="mt-16 2xl:mt-24 grid gap-4 2xl:gap-6 md:grid-cols-2 items-stretch">
         <FadeIn className="h-full">
           <Card className="h-full">
-            <div
-              className="text-[12px] tracking-[0.25em] uppercase mb-5"
-              style={{ color: "#4dbef3" }}
-            >
+            <div className="text-[12px] tracking-[0.25em] uppercase mb-5" style={{ color: "#4dbef3" }}>
               Hintergrund
             </div>
-            <ul
-              className="space-y-3 text-[14px]"
-              style={{ color: "rgba(200, 225, 240, 0.8)" }}
-            >
+            <ul className="space-y-3 text-[14px]" style={{ color: "rgba(200, 225, 240, 0.8)" }}>
               <li>Studium Medienkonzeption im 6. Semester (HFU Furtwangen)</li>
-              <li>Schwerpunkt UX/UI Design & Frontend-Entwicklung</li>
-              <li>Arbeitserfahrung als Softwaredesigner</li>
+              <li>Schwerpunkt UX/UI Design &amp; Frontend-Entwicklung</li>
+              <li>Arbeitserfahrung als Softwaredesigner bei M&amp;M Software</li>
               <li>Aus Triberg im Schwarzwald</li>
             </ul>
           </Card>
         </FadeIn>
         <FadeIn delay={0.08} className="h-full">
           <Card className="h-full">
-            <div
-              className="text-[12px] tracking-[0.25em] uppercase mb-5"
-              style={{ color: "#4dbef3" }}
-            >
+            <div className="text-[12px] tracking-[0.25em] uppercase mb-5" style={{ color: "#4dbef3" }}>
               Womit ich arbeite
             </div>
             <div className="flex flex-wrap gap-2">
-              {[
-                "Figma",
-                "React",
-                "KI",
-                "TypeScript",
-                "TailwindCSS",
-                "Motiondesign",
-                "Vercel",
-                "EmailJS",
-                "Google Analytics",
-                "GitHub",
-                "Strapi",
-                "Supabase",
-              ].map((t) => (
+              {["Figma", "React", "KI", "TypeScript", "TailwindCSS", "Motiondesign", "Vercel", "EmailJS", "Google Analytics", "GitHub", "Strapi", "Supabase"].map((t) => (
                 <span
                   key={t}
                   className="tag-pill rounded-full px-3 py-1 2xl:px-4 2xl:py-1.5 text-[12px] 2xl:text-[14px]"
@@ -155,12 +145,132 @@ export function About() {
         </FadeIn>
       </div>
 
-      {/* Philosophy */}
+      {/* ── Berkant ── */}
+      <div className="mt-20 sm:mt-24 xl:mt-28 2xl:mt-32 grid gap-10 md:gap-16 2xl:gap-24 md:grid-cols-5 items-center">
+        <FadeIn className="md:col-span-3">
+          <h2 className="text-white text-[clamp(36px,6vw,80px)] tracking-tight leading-[1.05]">
+            Hi, ich bin{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: "linear-gradient(135deg, #4dbef3 0%, #006999 100%)" }}
+            >
+              Berkant.
+            </span>
+          </h2>
+          <p
+            className="mt-2 text-[12px] sm:text-[13px] tracking-[0.2em] uppercase"
+            style={{ color: "#4dbef3" }}
+          >
+            Kundenkommunikation & Projektmanagement
+          </p>
+          <p
+            className="mt-7 text-[16px] sm:text-[17px] xl:text-[19px] 2xl:text-[21px] leading-relaxed"
+            style={{ color: "rgba(200, 225, 240, 0.8)" }}
+          >
+            Ich bin euer erster Ansprechpartner. Von der ersten Anfrage bis zum finalen Ergebnis
+            begleite ich euch durch den gesamten Prozess – klar, direkt und zuverlässig.
+          </p>
+          <p
+            className="mt-4 text-[15px] xl:text-[17px] 2xl:text-[18px] leading-relaxed"
+            style={{ color: "rgba(180, 210, 230, 0.6)" }}
+          >
+            Mein Fokus liegt auf reibungsloser Kommunikation und strukturiertem Projektmanagement.
+            Ihr wisst immer, wo euer Projekt steht – und was als nächstes passiert.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/berkant-agyar-2334a6363"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2.5 text-[14px] xl:text-[15px] font-medium transition-colors duration-200"
+            style={{ color: "rgba(150, 190, 220, 0.6)" }}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#4dbef3")}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(150, 190, 220, 0.6)")}
+          >
+            <Linkedin size={16} />
+            LinkedIn
+          </a>
+        </FadeIn>
+
+        <FadeIn delay={0.15} className="md:col-span-2 flex justify-center md:justify-end">
+          <div className="group relative">
+            <div
+              className="absolute inset-0 rounded-full scale-[1.10]"
+              style={{ border: "1px solid rgba(77, 190, 243, 0.15)" }}
+            />
+            <div
+              className="absolute inset-0 rounded-full scale-[1.04]"
+              style={{ border: "1px solid rgba(77, 190, 243, 0.08)" }}
+            />
+            <motion.div
+              aria-hidden
+              className="absolute inset-0 rounded-full scale-[1.18] pointer-events-none"
+              style={{
+                background: "conic-gradient(from 180deg, transparent 0deg, rgba(77,190,243,0.45) 80deg, transparent 160deg, transparent 360deg)",
+                WebkitMask: "radial-gradient(circle, transparent 49%, #000 50%, #000 51%, transparent 52%)",
+                mask: "radial-gradient(circle, transparent 49%, #000 50%, #000 51%, transparent 52%)",
+              }}
+              animate={{ rotate: -360 }}
+              transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+            />
+            <div
+              className="relative h-60 w-60 sm:h-72 sm:w-72 xl:h-80 xl:w-80 2xl:h-96 2xl:w-96 rounded-full overflow-hidden transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+              style={{ border: "2px solid rgba(77, 190, 243, 0.45)" }}
+            >
+              <img
+                src={berkantImg}
+                alt="Berkant Agyar"
+                className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+
+      {/* Berkant info cards */}
+      <div className="mt-16 2xl:mt-24 grid gap-4 2xl:gap-6 md:grid-cols-2 items-stretch">
+        <FadeIn className="h-full">
+          <Card className="h-full">
+            <div className="text-[12px] tracking-[0.25em] uppercase mb-5" style={{ color: "#4dbef3" }}>
+              Hintergrund
+            </div>
+            <ul className="space-y-3 text-[14px]" style={{ color: "rgba(200, 225, 240, 0.8)" }}>
+              <li>Studium Wirtschaftsinformatik im 6. Semester (HFU Furtwangen)</li>
+              <li>Schwerpunkt Porjektmanagemnt & Digital Business</li>
+              <li>Arbeitserfahrung im Projektmanagement bei Mercedes-Benz</li>
+              <li>Aus Triberg im Schwarzwald</li>
+            </ul>
+          </Card>
+        </FadeIn>
+        <FadeIn delay={0.08} className="h-full">
+          <Card className="h-full">
+            <div className="text-[12px] tracking-[0.25em] uppercase mb-5" style={{ color: "#4dbef3" }}>
+              Aufgabenbereiche
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {["Kundenkommunikation", "Projektmanagement", "Vertragsabwicklung", "Angebotserstellung"].map((t) => (
+                <span
+                  key={t}
+                  className="tag-pill rounded-full px-3 py-1 2xl:px-4 2xl:py-1.5 text-[12px] 2xl:text-[14px]"
+                  style={{
+                    background: "rgba(77, 190, 243, 0.08)",
+                    border: "1px solid rgba(77, 190, 243, 0.18)",
+                    color: "rgba(180, 225, 245, 0.85)",
+                  }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </Card>
+        </FadeIn>
+      </div>
+
+      {/* ── Unser Ansatz ── */}
       <div className="mt-20 2xl:mt-28">
         <FadeIn>
-          <SectionLabel>Mein Ansatz</SectionLabel>
+          <SectionLabel>Unser Ansatz</SectionLabel>
           <h2 className="text-white text-[clamp(26px,4vw,52px)] tracking-tight max-w-2xl 2xl:max-w-3xl mb-10 2xl:mb-14">
-            Was mir bei jeder Website wichtig ist.
+            Was uns bei jeder Website wichtig ist.
           </h2>
         </FadeIn>
         <div className="grid gap-6 2xl:gap-8 sm:grid-cols-2 md:grid-cols-3 items-stretch">
@@ -168,17 +278,17 @@ export function About() {
             {
               Icon: Zap,
               t: "Einfach & klar",
-              d: "Deine Kunden sollen sofort verstehen, was du anbietest. Ganz ohne suchen zu müssen.",
+              d: "Eure Kunden sollen sofort verstehen, was ihr anbietet. Ganz ohne suchen zu müssen.",
             },
             {
               Icon: Layers,
               t: "Design & Technik aus einer Hand",
-              d: "Ich mache beides selbst. So entsteht kein Wirrwarr zwischen verschiedenen Anbietern.",
+              d: "Wir machen beides selbst. So entsteht kein Wirrwarr zwischen verschiedenen Anbietern.",
             },
             {
-              Icon: UserCheck,
+              Icon: Users,
               t: "Persönliche Betreuung",
-              d: "Du arbeitest direkt mit mir. Kein Callcenter, kein Ping-Pong. Ein Ansprechpartner für alles.",
+              d: "Ihr habt feste Ansprechpartner. Kein Callcenter, kein Ping-Pong – direkt, schnell und auf Augenhöhe.",
             },
           ] as { Icon: LucideIcon; t: string; d: string }[]).map(({ Icon, t, d }) => (
             <FadeIn key={t} className="h-full">
@@ -192,13 +302,8 @@ export function About() {
                 >
                   <Icon size={22} color="#4dbef3" strokeWidth={1.8} />
                 </div>
-                <h3 className="text-white text-[18px] sm:text-[20px] 2xl:text-[23px] mb-2">
-                  {t}
-                </h3>
-                <p
-                  className="text-[14px] 2xl:text-[16px] leading-relaxed"
-                  style={{ color: "rgba(180, 210, 230, 0.6)" }}
-                >
+                <h3 className="text-white text-[18px] sm:text-[20px] 2xl:text-[23px] mb-2">{t}</h3>
+                <p className="text-[14px] 2xl:text-[16px] leading-relaxed" style={{ color: "rgba(180, 210, 230, 0.6)" }}>
                   {d}
                 </p>
               </Card>
@@ -207,7 +312,7 @@ export function About() {
         </div>
       </div>
 
-      {/* CTA */}
+      {/* ── CTA ── */}
       <FadeIn>
         <div className="mt-20 2xl:mt-28 text-center">
           <h2 className="text-white text-[28px] 2xl:text-[36px] mb-3">
@@ -217,7 +322,7 @@ export function About() {
             className="text-[15px] xl:text-[16px] 2xl:text-[18px] mb-8"
             style={{ color: "rgba(180, 210, 230, 0.6)" }}
           >
-            Unverbindlich, entspannt und auf Augenhöhe.
+            Unverbindlich, entspannt — Berkant meldet sich in der Regel innerhalb von 24 Stunden bei dir.
           </p>
           <PrimaryButton onClick={() => navigate("/kontakt")}>
             Projekt anfragen

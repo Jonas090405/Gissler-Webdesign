@@ -7,7 +7,7 @@ import logoUrl from "../../imports/Logo-Gissler-webdesign.svg";
 const items = [
   { id: "/portfolio", label: "Projekte", Icon: Briefcase },
   { id: "/leistungen", label: "Leistungen", Icon: Layers },
-  { id: "/ueber-mich", label: "Über mich", Icon: User },
+  { id: "/ueber-mich", label: "Über uns", Icon: User },
   { id: "/kontakt", label: "Kontakt", Icon: Mail },
 ];
 
@@ -38,7 +38,7 @@ export function Navbar() {
     <>
       {/* ── DESKTOP header bar (lg+) ───────────────────────── */}
       <motion.header
-        className="fixed top-0 left-0 right-0 z-50 hidden lg:block"
+        className="fixed top-0 left-0 right-0 z-50 hidden xl:block"
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -75,7 +75,7 @@ export function Navbar() {
             </div>
 
             {/* Nav items – centered to full viewport */}
-            <nav className="absolute inset-0 hidden lg:flex items-center justify-center gap-10 pointer-events-none">
+            <nav className="absolute inset-0 hidden xl:flex items-center justify-center gap-10 pointer-events-none">
               {items.map(({ id, label, Icon }) => {
                 const active =
                   location.pathname === id ||
@@ -124,7 +124,7 @@ export function Navbar() {
 
       {/* ── MOBILE / TABLET header bar ────────────────────── */}
       <div
-        className="fixed top-0 left-0 right-0 z-50 lg:hidden flex items-center justify-between px-4 transition-all duration-300"
+        className="fixed top-0 left-0 right-0 z-50 xl:hidden flex items-center justify-between px-4 transition-all duration-300"
         style={{
           height: "60px",
           background: scrolled ? "rgba(13, 17, 21, 0.80)" : "transparent",

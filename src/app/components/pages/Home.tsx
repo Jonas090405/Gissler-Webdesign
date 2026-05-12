@@ -8,9 +8,10 @@ import { FadeIn } from "../FadeIn";
 import { PortfolioSlider } from "../PortfolioSlider";
 import { Aurora } from "../Aurora";
 import { useNavigate } from "react-router-dom";
-import { Palette, Code2, Rocket, Phone } from "lucide-react";
+import { Palette, Code2, Rocket, Phone, Linkedin } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import profilbild from "../../../imports/Profilbild.jpg";
+import berkantImg from "../../../imports/Berkant_agyar.jpeg";
 import { DesignerSVG } from "../DesignerSVG";
 import gcnImg from "../../../imports/gcn-fahrzeughandel.png";
 import gcnAvatar from "../../../imports/gcn-avatar.jpeg";
@@ -53,7 +54,7 @@ export function Home() {
       <Hero />
       <PortfolioPreview />
       <Services />
-      <AboutPreview />
+      <TeamPreview />
       <Contact />
     </main>
   );
@@ -91,7 +92,7 @@ function Hero() {
               className="mt-5 sm:mt-7 text-[16px] sm:text-[18px] lg:text-[19px] xl:text-[21px] 2xl:text-[24px] leading-relaxed"
               style={{ color: "rgba(200, 225, 240, 0.75)" }}
             >
-              Ich entwerfe und baue deine Website. Von der ersten Idee bis sie live ist.
+              Wir entwerfen und bauen deine Website. Von der ersten Idee bis sie live ist.
               Du musst dich um nichts kümmern.
             </p>
           </FadeIn>
@@ -127,10 +128,10 @@ function PortfolioPreview() {
         <SectionLabel>Projekte</SectionLabel>
         <div className="mb-8 sm:mb-10 xl:mb-14 2xl:mb-20">
           <h2 className="text-white text-[clamp(28px,4.5vw,72px)] tracking-tight max-w-4xl 2xl:max-w-5xl">
-            Projekte, die ich umgesetzt habe.
+            Projekte, die wir umgesetzt haben.
           </h2>
           <p className="mt-4 xl:mt-6 max-w-2xl 2xl:max-w-3xl text-[15px] sm:text-[17px] xl:text-[19px] 2xl:text-[21px] leading-relaxed" style={{ color: "rgba(180,210,230,0.65)" }}>
-            Eine Auswahl aktueller Kundenarbeiten.
+            Eine Auswahl unserer aktuellen Kundenarbeiten.
           </p>
         </div>
       </FadeIn>
@@ -182,7 +183,7 @@ function Services() {
             Alles, was du für deine Website brauchst.
           </h2>
           <p className="mt-4 xl:mt-6 max-w-2xl 2xl:max-w-3xl text-[15px] sm:text-[17px] xl:text-[19px] 2xl:text-[21px] leading-relaxed" style={{ color: "rgba(180,210,230,0.65)" }}>
-            Ich übernehme alles: Design, Entwicklung und Hosting.<br />Du musst dich um nichts kümmern.
+            Wir übernehmen alles: Design, Entwicklung und Hosting.<br />Du musst dich um nichts kümmern.
           </p>
         </div>
       </FadeIn>
@@ -234,78 +235,110 @@ function Services() {
   );
 }
 
-function AboutPreview() {
+function TeamPreview() {
   const navigate = useNavigate();
+
+  const members = [
+    {
+      photo: profilbild as string | null,
+      initials: null as string | null,
+      name: "Jonas Gissler",
+      role: "Design & Entwicklung",
+      desc: "Jonas entwirft und entwickelt deine Website – von der Idee bis zur Live-Schaltung. Design, Technik und Hosting aus einer Hand.",
+      linkedin: "https://www.linkedin.com/in/jonas-gissler-37b1482b0/",
+    },
+    {
+      photo: berkantImg as string | null,
+      initials: null as string | null,
+      name: "Berkant Agyar",
+      role: "Kundenkommunikation & Projektmanagement",
+      desc: "Berkant ist dein erster Ansprechpartner. Er begleitet dich durch den gesamten Prozess – von der ersten Anfrage bis zum finalen Ergebnis.",
+      linkedin: "https://www.linkedin.com/in/berkant-agyar-2334a6363",
+    },
+  ];
+
   return (
     <section className="py-16 sm:py-20 lg:py-28 xl:py-36 2xl:py-48">
       <FadeIn>
-        <SectionLabel>Über mich</SectionLabel>
-      </FadeIn>
-      <div className="grid gap-10 md:gap-12 xl:gap-20 2xl:gap-28 md:grid-cols-5 items-center">
-        <FadeIn className="md:col-span-3">
-          <h2 className="text-white text-[clamp(26px,4vw,64px)] tracking-tight mb-6 xl:mb-8">
-            Hi, ich bin Jonas.
+        <SectionLabel>Über uns</SectionLabel>
+        <div className="mb-10 sm:mb-12 xl:mb-16 2xl:mb-20">
+          <h2 className="text-white text-[clamp(28px,4.5vw,72px)] tracking-tight">
+            Das sind wir.
           </h2>
           <p
-            className="text-[15px] sm:text-[16px] xl:text-[18px] 2xl:text-[21px] leading-relaxed mb-4 xl:mb-6"
-            style={{ color: "rgba(200, 225, 240, 0.8)" }}
+            className="mt-4 xl:mt-6 max-w-2xl 2xl:max-w-3xl text-[15px] sm:text-[17px] xl:text-[19px] 2xl:text-[21px] leading-relaxed"
+            style={{ color: "rgba(180,210,230,0.65)" }}
           >
-            Webdesigner und Entwickler aus Triberg im Schwarzwald.
-            Ich kümmere mich komplett um deine Website: Design, Technik, Hosting und alles, was dazugehört.
+            Design, Entwicklung und Hosting — du musst dich um nichts kümmern.
           </p>
-          <p
-            className="text-[14px] sm:text-[15px] xl:text-[17px] 2xl:text-[19px] leading-relaxed mb-4"
-            style={{ color: "rgba(180, 210, 230, 0.6)" }}
-          >
-            Mein Ziel ist eine Website, bei der deine Kunden sofort verstehen, was du anbietest
-            und dich gerne kontaktieren.
-          </p>
-          <p
-            className="text-[14px] sm:text-[15px] xl:text-[17px] 2xl:text-[19px] leading-relaxed mb-8 xl:mb-10"
-            style={{ color: "rgba(180, 210, 230, 0.6)" }}
-          >
-            Ich bin persönlich für dich da. Du schreibst immer direkt mit mir.
-          </p>
-          <GhostButton onClick={() => navigate("/ueber-mich")}>
-            Mehr über mich
-          </GhostButton>
-        </FadeIn>
+        </div>
+      </FadeIn>
 
-        <FadeIn delay={0.15} className="md:col-span-2 flex justify-center">
-          <div className="group relative">
-            {/* Statischer Außenring */}
-            <div
-              className="absolute inset-0 rounded-full scale-[1.10]"
-              style={{ border: "1px solid rgba(77, 190, 243, 0.15)" }}
-            />
-            {/* Rotierender Akzent-Ring */}
-            <motion.div
-              aria-hidden
-              className="absolute inset-0 rounded-full scale-[1.16] pointer-events-none"
-              style={{
-                background:
-                  "conic-gradient(from 0deg, transparent 0deg, rgba(77,190,243,0.45) 80deg, transparent 160deg, transparent 360deg)",
-                WebkitMask:
-                  "radial-gradient(circle, transparent 49%, #000 50%, #000 51%, transparent 52%)",
-                mask: "radial-gradient(circle, transparent 49%, #000 50%, #000 51%, transparent 52%)",
-                filter: "blur(0.5px)",
-              }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            />
-            <div
-              className="relative h-56 w-56 sm:h-64 sm:w-64 xl:h-80 xl:w-80 2xl:h-[26rem] 2xl:w-[26rem] rounded-full overflow-hidden transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-              style={{ border: "2px solid rgba(77, 190, 243, 0.4)" }}
-            >
-              <img
-                src={profilbild}
-                alt="Jonas Gissler"
-                className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
-              />
-            </div>
-          </div>
-        </FadeIn>
+      <div className="grid gap-5 sm:gap-6 xl:gap-8 2xl:gap-10 sm:grid-cols-2 items-stretch">
+        {members.map(({ photo, initials, name, role, desc, linkedin }, i) => (
+          <FadeIn key={name} delay={i * 0.1} className="h-full">
+            <Card className="h-full">
+              {/* Avatar + name + role */}
+              <div className="flex items-center gap-4 mb-5 xl:mb-6">
+                <div
+                  className="shrink-0 h-14 w-14 xl:h-16 xl:w-16 2xl:h-[72px] 2xl:w-[72px] rounded-full overflow-hidden flex items-center justify-center text-[17px] xl:text-[20px] font-bold"
+                  style={{
+                    border: "2px solid rgba(77, 190, 243, 0.45)",
+                    background: photo
+                      ? "transparent"
+                      : "linear-gradient(135deg, rgba(0,105,153,0.5) 0%, rgba(77,190,243,0.18) 100%)",
+                    color: "#4dbef3",
+                  }}
+                >
+                  {photo ? (
+                    <img src={photo} alt={name} className="h-full w-full object-cover object-top" />
+                  ) : (
+                    initials
+                  )}
+                </div>
+                <div>
+                  <h3 className="text-white text-[17px] xl:text-[19px] 2xl:text-[21px] font-medium leading-tight mb-1.5">
+                    {name}
+                  </h3>
+                  <p
+                    className="text-[11px] tracking-[0.18em] uppercase leading-snug"
+                    style={{ color: "#4dbef3" }}
+                  >
+                    {role}
+                  </p>
+                </div>
+              </div>
+
+              <p
+                className="text-[14px] xl:text-[15px] 2xl:text-[16px] leading-relaxed mb-5"
+                style={{ color: "rgba(180, 210, 230, 0.6)" }}
+              >
+                {desc}
+              </p>
+              <a
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[13px] xl:text-[14px] font-medium transition-colors duration-200"
+                style={{ color: "rgba(150, 190, 220, 0.6)" }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#4dbef3")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(150, 190, 220, 0.6)")}
+              >
+                <Linkedin size={14} />
+                LinkedIn
+              </a>
+            </Card>
+          </FadeIn>
+        ))}
       </div>
+
+      <FadeIn delay={0.2}>
+        <div className="mt-10 xl:mt-14 2xl:mt-16">
+          <GhostButton onClick={() => navigate("/ueber-mich")}>
+            Mehr über uns
+          </GhostButton>
+        </div>
+      </FadeIn>
     </section>
   );
 }
@@ -315,8 +348,8 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_AUTOREPLY_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-const PHONE_NUMBER = "+49 151 2079 7408"; // ← deine Nummer
-const EMAIL_ADDRESS = "Jonas@gissler-webdesign.de";
+const BERKANT_EMAIL = "Berkant@gissler-webdesign.de";
+const BERKANT_PHONE = "+49 176 3464 9177";
 
 type HomeFormData = { name: string; email: string; phone: string; message: string };
 type HomeFormErrors = Partial<Record<keyof HomeFormData, string>>;
@@ -395,30 +428,45 @@ function Contact() {
       </FadeIn>
       <div className="grid gap-10 md:gap-12 xl:gap-20 2xl:gap-28 md:grid-cols-2 items-start">
         <FadeIn>
-          <h2 className="text-white text-[clamp(26px,4vw,64px)] tracking-tight mb-6 xl:mb-8">
-            Erzähl mir von deinem Projekt.
+          <h2 className="text-white text-[clamp(26px,4vw,64px)] tracking-tight mb-4 xl:mb-5">
+            Erzähl uns von deinem Projekt.
           </h2>
+
+          {/* Ansprechpartner */}
+          <div className="flex items-center gap-3 mb-5 xl:mb-6">
+            <div
+              className="shrink-0 h-9 w-9 rounded-full overflow-hidden"
+              style={{ border: "1.5px solid rgba(77,190,243,0.4)" }}
+            >
+              <img src={berkantImg} alt="Berkant Agyar" className="h-full w-full object-cover object-top" />
+            </div>
+            <div>
+              <div className="text-[11px]" style={{ color: "rgba(150,190,220,0.5)" }}>Dein Ansprechpartner</div>
+              <div className="text-[13px] text-white font-medium leading-tight">Berkant Agyar</div>
+            </div>
+          </div>
+
           <p
             className="text-[14px] sm:text-[15px] xl:text-[17px] 2xl:text-[19px] leading-relaxed mb-8 max-w-md xl:max-w-lg 2xl:max-w-xl"
             style={{ color: "rgba(180, 210, 230, 0.6)" }}
           >
-            Ich melde mich innerhalb von 24 Stunden
+            Wir melden uns innerhalb von 24 Stunden
             mit einer ersten Einschätzung und einem unverbindlichen Termin.
           </p>
           <div className="space-y-3 text-[14px] xl:text-[16px]">
             <div>
               <div className="mb-1" style={{ color: "rgba(150, 180, 200, 0.5)" }}>E-Mail</div>
-              <a href={`mailto:${EMAIL_ADDRESS}`} className="text-white hover:text-sky-300 transition-colors break-all">
-                {EMAIL_ADDRESS}
+              <a href={`mailto:${BERKANT_EMAIL}`} className="text-white hover:text-sky-300 transition-colors break-all">
+                {BERKANT_EMAIL}
               </a>
             </div>
             <div>
               <div className="mb-1" style={{ color: "rgba(150, 180, 200, 0.5)" }}>Telefon</div>
               <a
-                href={`tel:${PHONE_NUMBER.replace(/[\s\-\(\)]/g, "")}`}
+                href={`tel:${BERKANT_PHONE.replace(/[\s]/g, "")}`}
                 className="text-white hover:text-sky-300 transition-colors"
               >
-                {PHONE_NUMBER}
+                {BERKANT_PHONE}
               </a>
             </div>
             <div>
@@ -470,20 +518,20 @@ function Contact() {
                 </div>
                 <div>
                   <p className="text-[13px] mb-1" style={{ color: "rgba(150,190,220,0.6)" }}>
-                    Ruf mich einfach direkt an:
+                    Ruf uns einfach direkt an:
                   </p>
                   <a
-                    href={`tel:${PHONE_NUMBER.replace(/[\s\-\(\)]/g, "")}`}
+                    href={`tel:${BERKANT_PHONE.replace(/[\s]/g, "")}`}
                     className="text-white text-[24px] font-semibold tracking-tight hover:text-sky-300 transition-colors"
                   >
-                    {PHONE_NUMBER}
+                    {BERKANT_PHONE}
                   </a>
                 </div>
                 <p className="text-[13px] max-w-xs leading-relaxed" style={{ color: "rgba(150,190,220,0.5)" }}>
-                  Falls du mich nicht erreichen solltest, werde ich dich schnellstmöglich zurückrufen.
+                  Falls wir nicht erreichbar sind, hinterlasse eine kurze Nachricht — wir melden uns schnellstmöglich.
                 </p>
                 <a
-                  href={`tel:${PHONE_NUMBER.replace(/[\s\-\(\)]/g, "")}`}
+                  href={`tel:${BERKANT_PHONE.replace(/[\s]/g, "")}`}
                   className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-white font-medium transition-all duration-200 hover:brightness-110"
                   style={{ background: "linear-gradient(135deg, #006999 0%, #4dbef3 100%)" }}
                 >
@@ -504,7 +552,7 @@ function Contact() {
                   </div>
                   <h3 className="text-white text-[22px] mb-2">Danke!</h3>
                   <p className="text-[14px]" style={{ color: "rgba(180, 210, 230, 0.6)" }}>
-                    Ich melde mich so schnell wie möglich bei dir.
+                    Wir melden uns so schnell wie möglich bei dir.
                   </p>
                 </div>
               ) : (
@@ -534,8 +582,8 @@ function Contact() {
                   {status === "error" && (
                     <p className="text-red-400 text-[13px]">
                       Fehler beim Senden. Bitte direkt an{" "}
-                      <a href={`mailto:${EMAIL_ADDRESS}`} className="underline">
-                        {EMAIL_ADDRESS}
+                      <a href={`mailto:${BERKANT_EMAIL}`} className="underline">
+                        {BERKANT_EMAIL}
                       </a>{" "}
                       schreiben.
                     </p>

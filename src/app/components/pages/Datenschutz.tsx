@@ -36,6 +36,11 @@ export function Datenschutz() {
               Ein Datenschutzbeauftragter ist nicht bestellt, da die gesetzlichen
               Voraussetzungen hierfür nicht vorliegen.
             </p>
+            <p className="text-slate-400 text-[13px] leading-relaxed mt-3">
+              Berkant Agyar ist selbstständiger externer Partner für Kundenkommunikation und Projektmanagement.
+              Er kann im Rahmen seiner Tätigkeit Kontaktdaten von Interessenten erhalten, handelt dabei
+              jedoch als eigenständig Verantwortlicher im Sinne der DSGVO.
+            </p>
           </Card>
         </FadeIn>
 
@@ -45,11 +50,11 @@ export function Datenschutz() {
               2. Allgemeine Hinweise
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
-              Der Schutz deiner personenbezogenen Daten ist mir ein wichtiges
-              Anliegen. Ich verarbeite deine Daten ausschließlich auf
+              Der Schutz deiner personenbezogenen Daten ist uns ein wichtiges
+              Anliegen. Wir verarbeiten deine Daten ausschließlich auf
               Grundlage der gesetzlichen Bestimmungen (DSGVO, TDDDG). In
-              dieser Datenschutzerklärung informiere ich dich über die
-              wichtigsten Aspekte der Datenverarbeitung im Rahmen meiner
+              dieser Datenschutzerklärung informieren wir dich über die
+              wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer
               Website.
             </p>
           </Card>
@@ -93,10 +98,13 @@ export function Datenschutz() {
               5. Kontaktformular &amp; E-Mail-Kontakt
             </div>
             <p className="text-slate-300 text-[14px] leading-relaxed">
-              Wenn du mir über das Kontaktformular oder per E-Mail Anfragen
+              Wenn du uns über das Kontaktformular oder per E-Mail Anfragen
               zukommen lässt, werden deine Angaben zur Bearbeitung der
               Anfrage und für mögliche Anschlussfragen gespeichert. Diese
-              Daten gebe ich nicht ohne deine Einwilligung weiter.
+              Daten geben wir nicht ohne deine Einwilligung weiter.
+              Im Rahmen der Akquise und Kundenkommunikation kann Berkant Agyar
+              (selbstständiger externer Partner) Zugriff auf deine Anfrage erhalten,
+              soweit dies zur Bearbeitung erforderlich ist.
               Rechtsgrundlage: Art. 6 Abs. 1 lit. b und f DSGVO.
             </p>
           </Card>
@@ -171,7 +179,7 @@ export function Datenschutz() {
               Du hast jederzeit das Recht auf Auskunft, Berichtigung,
               Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit
               sowie Widerspruch gegen die Verarbeitung deiner Daten. Wende
-              dich dafür einfach per E-Mail an mich.
+              dich dafür einfach per E-Mail an uns.
             </p>
             <p className="text-slate-300 text-[14px] leading-relaxed mt-3">
               <strong className="text-slate-200">Widerrufsrecht:</strong> Soweit

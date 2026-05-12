@@ -2,7 +2,8 @@ import { Linkedin, Mail, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import logoUrl from "../../imports/Logo-Gissler-webdesign.svg";
 
-const EMAIL_ADDRESS = "Jonas@gissler-webdesign.de";
+const BERKANT_EMAIL = "Berkant@gissler-webdesign.de";
+const JONAS_EMAIL = "Jonas@gissler-webdesign.de";
 
 export function Footer() {
   const navigate = useNavigate();
@@ -67,36 +68,29 @@ export function Footer() {
             >
               Kontakt
             </div>
-            <a
-              href={`mailto:${EMAIL_ADDRESS}`}
-              aria-label="E-Mail an Jonas Gissler senden"
-              className="flex items-center gap-2 text-[14px] break-all transition-colors duration-200 cursor-pointer"
-              style={{ color: "rgba(200, 225, 240, 0.7)" }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#4dbef3")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color =
-                  "rgba(200, 225, 240, 0.7)")
-              }
-            >
-              <Mail size={14} className="shrink-0" style={{ color: "rgba(77,190,243,0.7)" }} />
-              {EMAIL_ADDRESS}
-            </a>
+            {[BERKANT_EMAIL, JONAS_EMAIL].map((email) => (
+              <a
+                key={email}
+                href={`mailto:${email}`}
+                aria-label={`E-Mail an ${email} senden`}
+                className="mt-1.5 first:mt-0 flex items-center gap-2 text-[12px] sm:text-[13px] xl:text-[14px] transition-colors duration-200 cursor-pointer"
+                style={{ color: "rgba(200, 225, 240, 0.7)" }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#4dbef3")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(200, 225, 240, 0.7)")}
+              >
+                <Mail size={13} className="shrink-0" style={{ color: "rgba(77,190,243,0.7)" }} />
+                <span className="break-all">{email}</span>
+              </a>
+            ))}
             <a
               href="https://www.linkedin.com/company/gissler-webdesign/"
               target="_blank"
               rel="noreferrer"
-              aria-label="LinkedIn Profil von Jonas Gissler"
+              aria-label="LinkedIn Profil von Gissler Webdesign"
               className="mt-2 inline-flex items-center gap-2 text-[14px] 2xl:text-[16px] transition-colors duration-200 cursor-pointer"
               style={{ color: "rgba(200, 225, 240, 0.7)" }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#4dbef3")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color =
-                  "rgba(200, 225, 240, 0.7)")
-              }
+              onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#4dbef3")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(200, 225, 240, 0.7)")}
             >
               <Linkedin size={14} style={{ color: "#4dbef3" }} />
               LinkedIn
@@ -116,7 +110,7 @@ export function Footer() {
                   ["/", "Startseite"],
                   ["/portfolio", "Portfolio"],
                   ["/leistungen", "Leistungen"],
-                  ["/ueber-mich", "Über mich"],
+                  ["/ueber-mich", "Über uns"],
                   ["/kontakt", "Kontakt"],
                   ["/impressum", "Impressum"],
                   ["/datenschutz", "Datenschutz"],
@@ -128,8 +122,7 @@ export function Footer() {
                     className="transition-colors duration-200 cursor-pointer"
                     style={{ color: "rgba(200, 225, 240, 0.6)" }}
                     onMouseEnter={(e) =>
-                      ((e.currentTarget as HTMLButtonElement).style.color =
-                        "#4dbef3")
+                      ((e.currentTarget as HTMLButtonElement).style.color = "#4dbef3")
                     }
                     onMouseLeave={(e) =>
                       ((e.currentTarget as HTMLButtonElement).style.color =
@@ -149,7 +142,7 @@ export function Footer() {
           style={{ borderTop: "1px solid rgba(77, 190, 243, 0.06)" }}
         >
           <p className="text-[13px] 2xl:text-[15px]" style={{ color: "rgba(150, 180, 200, 0.4)" }}>
-            © 2026 Jonas Gissler — Alle Rechte vorbehalten
+            © 2026 Gissler Webdesign — Alle Rechte vorbehalten
           </p>
           <p className="text-[13px] 2xl:text-[15px]" style={{ color: "rgba(150, 180, 200, 0.3)" }}>
             Danke für deinen Besuch :)
