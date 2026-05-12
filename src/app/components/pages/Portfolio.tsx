@@ -15,7 +15,7 @@ const PROJECTS = [
     url: "https://gcn-fahrzeughandel.de/",
     testimonial: {
       show: true, // ← false = Testimonial ausblenden
-      quote: "Die Zusammenarbeit war von Anfang bis Ende reibungslos. Jonas hat unsere Vorstellungen genau verstanden und eine Website gebaut, die wirklich zu uns passt. Wir bekommen regelmäßig positives Feedback von unseren Kunden.",
+      quote: "Die Zusammenarbeit war von Anfang bis Ende reibungslos. Unsere Vorstellungen wurden genau verstanden und eine Website gebaut, die wirklich zu uns passt. Wir bekommen regelmäßig positives Feedback von unseren Kunden.",
       name: "Name Nachname",
       role: "Geschäftsführer",
       company: "GCN-Fahrzeughandel",

@@ -26,7 +26,7 @@ const PROJECTS = [
     features: ["React", "Dashboard", "Fahrzeugsuche", "E-Mail-System", "Deployment"],
     testimonial: {
       show: true, // ← false = Testimonial ausblenden
-      quote: "Die Zusammenarbeit war von Anfang bis Ende reibungslos. Jonas hat unsere Vorstellungen genau verstanden und eine Website gebaut, die wirklich zu uns passt. Außerdem erleichtert unser neues Admin-Panel die Verwaltung unserer Kunden erheblich.",
+      quote: "Die Zusammenarbeit war von Anfang bis Ende reibungslos. Unsere Vorstellungen wurden genau verstanden und eine Website gebaut, die wirklich zu uns passt. Außerdem erleichtert unser neues Admin-Panel die Verwaltung unserer Kunden erheblich.",
       name: "Giosue Canobbio",
       role: "Geschäftsführer",
       company: "GCN-Fahrzeughandel",
