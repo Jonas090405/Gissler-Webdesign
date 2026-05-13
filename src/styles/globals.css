@@ -126,7 +126,7 @@
     --marquee-animation-duration: calc(var(--marquee-elements) * 2s);
 
     /* ── Assets ─────────────────────────────────────────────── */
-    --profile-image: url('../imports/Profilbild.jpg');
+    --profile-image: url('../imports/Profilbild.png');
     --cursor-default: url('../imports/cursor.svg') 0 0, auto;
     --cursor-pointer: url('../imports/Cursorpointer.svg') 0 0, pointer;
 }
