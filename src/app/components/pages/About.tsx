@@ -11,7 +11,7 @@ import { Zap, Layers, Users, Linkedin, type LucideIcon } from "lucide-react";
 
 export function About() {
   usePageMeta({
-    title: "Über uns | Gissler Webdesign",
+    title: "Über uns | GA Webdesign",
     description: "Wir sind Jonas Gissler (Design & Entwicklung) und Berkant Agyar (Kundenkommunikation & Projektmanagement) – ein eingespieltes Team für moderne Webseiten aus dem Schwarzwald.",
     path: "/ueber-mich",
   });

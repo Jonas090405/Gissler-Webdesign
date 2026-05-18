@@ -67,7 +67,7 @@ const slideVariants = {
 
 export function Kontakt() {
   usePageMeta({
-    title: "Kontakt | Gissler Webdesign",
+    title: "Kontakt | GA Webdesign",
     description: "Starte dein Webprojekt. Schreib uns oder ruf uns direkt an – das Erstgespräch ist kostenlos und unverbindlich.",
     path: "/kontakt",
   });

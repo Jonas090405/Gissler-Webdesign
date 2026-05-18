@@ -22,7 +22,7 @@ export function Datenschutz() {
               1. Verantwortlicher
             </div>
             <div className="text-slate-200 text-[15px] leading-[1.9]">
-              Gissler Webdesign
+              GA Webdesign
               <br />
               Jonas Gissler
               <br />

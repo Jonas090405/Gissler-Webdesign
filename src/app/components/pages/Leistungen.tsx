@@ -96,7 +96,7 @@ const blocks = [
 
 export function Leistungen() {
   usePageMeta({
-    title: "Leistungen | Gissler Webdesign",
+    title: "Leistungen | GA Webdesign",
     description: "Webdesign, Entwicklung & Deployment aus einer Hand. Individuelles Design, schnelle Ladezeiten und alles fertig live – inkl. Hosting & SEO.",
     path: "/leistungen",
   });

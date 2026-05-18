@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Briefcase, Layers, User, Mail, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useLocation, Link } from "react-router-dom";
-import logoUrl from "../../imports/Logo-Gissler-webdesign.svg";
+import logoUrl from "../../imports/Logo_GA_Webdesign.svg";
 
 const items = [
   { id: "/projekte", label: "Projekte", Icon: Briefcase },
@@ -66,7 +66,7 @@ export function Navbar() {
               >
                 <img
                   src={logoUrl}
-                  alt="Gissler Webdesign Logo"
+                  alt="GA Webdesign Logo"
                   style={{ height: scrolled ? "36px" : "44px", transition: "height 0.3s ease", width: "auto" }}
                 />
               </Link>
@@ -136,7 +136,7 @@ export function Navbar() {
           aria-label="Zur Startseite"
           className="cursor-pointer hover:opacity-75 transition-opacity duration-200"
         >
-          <img src={logoUrl} alt="Gissler Webdesign Logo" className="h-9 w-auto" />
+          <img src={logoUrl} alt="GA Webdesign Logo" className="h-9 w-auto" />
         </Link>
 
         <button
@@ -178,7 +178,7 @@ export function Navbar() {
                   aria-label="Zur Startseite"
                   className="cursor-pointer hover:opacity-70 transition-opacity duration-200"
                 >
-                  <img src={logoUrl} alt="Gissler Webdesign Logo" className="h-9 w-auto" />
+                  <img src={logoUrl} alt="GA Webdesign Logo" className="h-9 w-auto" />
                 </Link>
                 <button
                   onClick={() => setIsOpen(false)}

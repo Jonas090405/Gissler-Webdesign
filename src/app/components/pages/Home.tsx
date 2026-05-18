@@ -45,7 +45,7 @@ const PROJECTS = [
 
 export function Home() {
   usePageMeta({
-    title: "Gissler Webdesign | Moderne Webseiten für lokale Unternehmen",
+    title: "GA Webdesign | Moderne Webseiten für lokale Unternehmen",
     description: "Ich entwerfe und entwickle moderne, professionelle Webseiten für lokale Unternehmen. Komplett fertig eingerichtet inkl. Hosting & SEO.",
     path: "/",
   });

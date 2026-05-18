@@ -1,6 +1,6 @@
 import { Linkedin, Mail, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import logoUrl from "../../imports/Logo-Gissler-webdesign.svg";
+import logoUrl from "../../imports/Logo_GA_Webdesign.svg";
 
 const BERKANT_EMAIL = "Berkant@gissler-webdesign.de";
 const JONAS_EMAIL = "Jonas@gissler-webdesign.de";
@@ -22,7 +22,7 @@ export function Footer() {
             <div className="flex items-center gap-2.5 mb-0.5">
               <img
                 src={logoUrl}
-                alt="Gissler Webdesign Logo"
+                alt="GA Webdesign Logo"
                 className="h-8 2xl:h-9 w-auto opacity-80"
               />
               <div
@@ -34,7 +34,7 @@ export function Footer() {
                   backgroundClip: "text",
                 }}
               >
-                Gissler Webdesign
+                GA Webdesign
               </div>
             </div>
             <p
@@ -86,7 +86,7 @@ export function Footer() {
               href="https://www.linkedin.com/company/gissler-webdesign/"
               target="_blank"
               rel="noreferrer"
-              aria-label="LinkedIn Profil von Gissler Webdesign"
+              aria-label="LinkedIn Profil von GA Webdesign"
               className="mt-2 inline-flex items-center gap-2 text-[14px] 2xl:text-[16px] transition-colors duration-200 cursor-pointer"
               style={{ color: "rgba(200, 225, 240, 0.7)" }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#4dbef3")}
@@ -142,7 +142,7 @@ export function Footer() {
           style={{ borderTop: "1px solid rgba(77, 190, 243, 0.06)" }}
         >
           <p className="text-[13px] 2xl:text-[15px]" style={{ color: "rgba(150, 180, 200, 0.4)" }}>
-            © 2026 Gissler Webdesign — Alle Rechte vorbehalten
+            © 2026 GA Webdesign — Alle Rechte vorbehalten
           </p>
           <p className="text-[13px] 2xl:text-[15px]" style={{ color: "rgba(150, 180, 200, 0.3)" }}>
             Danke für deinen Besuch :)

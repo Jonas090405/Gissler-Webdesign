@@ -32,7 +32,7 @@ const PROJECTS = [
 
 export function Portfolio() {
   usePageMeta({
-    title: "Portfolio | Gissler Webdesign",
+    title: "Portfolio | GA Webdesign",
     description: "Ausgewählte Webdesign-Projekte von Jonas Gissler. Moderne Websites für lokale Unternehmen aus dem Schwarzwald.",
     path: "/projekte",
   });
